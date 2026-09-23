@@ -62,200 +62,15 @@
         <a href="#evolucao">Evolução por nível</a>
         <a href="#impacto">Ver impacto fiscal</a>
         <button
-          id="previewOnepageBtn"
-          type="button"
-          class="preview-onepage-btn"
-          aria-label="Visualizar resumo executivo de 1 página para decisão"
-        >
-          <span>Visualizar One-Page</span>
-        </button>
-        <button
           id="exportPdf"
           type="button"
-          aria-label="Exportar resumo executivo para decisão em PDF (1 página)"
+          aria-label="Exportar esta página em PDF"
         >
-          <span>Exportar PDF (1 pág.)</span>
+          <span>Exportar PDF</span>
         </button>
         <button id="shareTop" type="button">Compartilhar</button>
       </div>
     </header>
-
-    <!-- ONE-PAGE EXECUTIVA PARA DECISÃO (A4 - EXPORTAÇÃO EM PDF E PREVIEW) -->
-    <section class="executive-onepage" id="executiveOnepage" aria-label="Resumo Executivo para Decisão (1 Página)">
-      <div class="onepage-sheet">
-        <!-- Top Metadata Bar -->
-        <div class="onepage-top-bar">
-          <span class="onepage-top-badge">#ValorizaAPPGG &nbsp;·&nbsp; DOCUMENTO EXECUTIVO PARA DECISÃO &nbsp;·&nbsp; CÂMARA MUNICIPAL DE SÃO PAULO</span>
-          <span class="onepage-top-meta">Setembro/2026 &nbsp;·&nbsp; Processo PL 699/2026</span>
-        </div>
-
-        <!-- Header -->
-        <div class="onepage-header">
-          <div class="onepage-logo">
-            <img src="/apogesp-mark.png" alt="APOGESP" />
-          </div>
-          <div class="onepage-title-block">
-            <h1>PL 699/2026: Por que incluir a carreira APPGG na valorização do Quadro Geral</h1>
-            <p>
-              Razões técnicas, jurídicas e fiscais para a equiparação remuneratória no QPGG (Lei 16.193/2015), com <b>custo zero em 2026</b>.
-            </p>
-          </div>
-        </div>
-
-        <!-- Core Contrast Box -->
-        <div class="onepage-kpi-banner">
-          <div class="onepage-kpi-title">
-            <span>A Assimetria Irrazoável Criada pelo PL Atual</span>
-            <span>QPGG · Mesma Lei nº 16.193/2015</span>
-          </div>
-          <div class="onepage-kpi-grid">
-            <div class="onepage-kpi-item">
-              <span>Piso Inicial AMCI (Controle)</span>
-              <strong>R$ 21.527,50</strong>
-              <small><b>R$ 23.526,23</b> com a GEP de R$ 1.998. Rendimento do 1º dia.</small>
-            </div>
-            <div class="onepage-kpi-item" style="border-left: 2px solid #ea580c;">
-              <span>APPGG com 15 anos (Ref. 11)</span>
-              <strong>R$ 20.738,60</strong>
-              <small>Ingressante do AMCI ganha mais que gestor com 15 anos de Prefeitura.</small>
-            </div>
-            <div class="onepage-kpi-item" style="border-left: 2px solid #b91c1c;">
-              <span>Disparidade no Topo (Ref. 15)</span>
-              <strong>+57,3% (+R$ 14.117)</strong>
-              <small>Em 2015 a diferença era de apenas <b>0,2% (R$ 46,69)</b>.</small>
-            </div>
-          </div>
-          <div class="onepage-kpi-strip">
-            <b>Cruzamento crítico:</b> O APPGG precisa de <b>12 níveis</b> para alcançar o piso do AMCI no 1º dia — e de <b>14 níveis</b> com a GEP. O AMCI ingressante com GEP recebe apenas <b>R$ 1.107 a menos</b> que o teto da carreira APPGG.
-          </div>
-        </div>
-
-        <!-- 6 Strategic Reasons -->
-        <div class="onepage-reasons-wrap">
-          <div class="onepage-section-heading">6 Razões Fundamentais para Decisão Imediata</div>
-          <div class="onepage-reasons-grid">
-            <div class="onepage-reason-card featured">
-              <b><span class="onepage-reason-num">01</span> Um só quadro, carreiras complementares</b>
-              <p>Criadas pela Lei 16.193/2015 (QPGG). Gestão (execução) e Controle (auditoria) são duas faces indissociáveis da boa administração pública.</p>
-            </div>
-            <div class="onepage-reason-card alert">
-              <b><span class="onepage-reason-num">02</span> 0% de reajuste sem justificativa técnica</b>
-              <p>O PL concede até 72% para AMCIs e congela os APPGGs em 0%, sem qualquer justificativa técnica ou jurídica formal nos autos do projeto.</p>
-            </div>
-            <div class="onepage-reason-card">
-              <b><span class="onepage-reason-num">03</span> Risco jurídico e ADI 525-MC/STF</b>
-              <p>O STF veda que a revalorização de uma carreira mascare reajuste seletivo sem causa justa para cargos do mesmo quadro sob regime de subsídio.</p>
-            </div>
-            <div class="onepage-reason-card alert">
-              <b><span class="onepage-reason-num">04</span> 42% dos cargos APPGGs já vagos</b>
-              <p>Dos 300 cargos, apenas 176 estão ativos na folha municipal. A inflação de 64% em 10 anos corroeu a atratividade e esvaziou a capacidade técnica.</p>
-            </div>
-            <div class="onepage-reason-card">
-              <b><span class="onepage-reason-num">05</span> 38% em funções de liderança estratégica</b>
-              <p>Coordenam grandes programas, compras, descarbonização e transição digital, mantendo a estabilidade de Estado nas transições de governo.</p>
-            </div>
-            <div class="onepage-reason-card">
-              <b><span class="onepage-reason-num">06</span> Injustiça estrutural da GEP</b>
-              <p>96% dos APPGGs não recebem a gratificação (restrita à CGM), embora fiscalizem e estruturem contratos bilionários nas secretarias finalísticas.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fiscal Table and Impact -->
-        <div class="onepage-fiscal-wrap">
-          <div class="onepage-table-box">
-            <table class="onepage-mini-table">
-              <thead>
-                <tr>
-                  <th>Cenários de Vigência</th>
-                  <th style="text-align:center;">Meses até 2028</th>
-                  <th style="text-align:right;">Impacto Anual</th>
-                  <th style="text-align:right;">Impacto 2026</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Outubro/2026</td>
-                  <td style="text-align:center;">27 meses</td>
-                  <td class="r">R$ 34,58 mi</td>
-                  <td class="r" style="color:#b91c1c;">R$ 7,78 mi</td>
-                </tr>
-                <tr class="rec">
-                  <td><b>Janeiro/2027 (Recomendado)</b></td>
-                  <td style="text-align:center;"><b>24 meses</b></td>
-                  <td class="r"><b>R$ 34,58 mi</b></td>
-                  <td class="r" style="color:#166534;font-weight:700;">R$ 0,00</td>
-                </tr>
-                <tr>
-                  <td>Maio/2027 (Data-base)</td>
-                  <td style="text-align:center;">20 meses</td>
-                  <td class="r">R$ 23,05 mi*</td>
-                  <td class="r" style="color:#166534;font-weight:700;">R$ 0,00</td>
-                </tr>
-                <tr>
-                  <td>Janeiro/2028</td>
-                  <td style="text-align:center;">12 meses</td>
-                  <td class="r">R$ 34,58 mi</td>
-                  <td class="r" style="color:#166534;font-weight:700;">R$ 0,00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="onepage-fiscal-summary">
-            <div>
-              <span>Viabilidade Fiscal Total</span>
-              <strong>R$ 34,6 mi/ano</strong>
-              <p>Base: 176 ativos + 42 ingressantes (218 servidores). Teto conservador com encargos patronais: <b>R$ 49 mi/ano</b>.</p>
-            </div>
-            <div style="border-top:1px dashed #cbd5e1;padding-top:4px;margin-top:4px;">
-              <p style="color:#166534;font-weight:700;">
-                ✓ Retorno superior: a economia gerada pelas entregas da carreira (frota elétrica, IPTU e compras) supera o custo da correção.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer Grid: Quote and Action -->
-        <div class="onepage-footer-grid">
-          <div class="onepage-quote-box">
-            <blockquote>
-              “... Acho um grande equívoco valorizar mais quem controla do que quem ajuda a entregar serviços à população. Quem está trabalhando para entregar deve ser mais valorizado do que quem só controla.”
-            </blockquote>
-            <small>— Regina Silvia Pacheco, Professora FGV e ex-Secretária Adjunta de SEGES</small>
-          </div>
-          <div class="onepage-action-box">
-            <b>Proposição de Decisão aos Vereadores</b>
-            <p>
-              Apresentação de <b>Emenda Modificativa/Substitutiva ao PL 699/2026</b> para inclusão da carreira APPGG com modulação temporal para <b>1º de janeiro de 2027</b> — garantindo responsabilidade fiscal, isonomia constitucional e continuidade dos serviços municipais.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bottom Sign-off -->
-        <div class="onepage-signoff">
-          <span><b>APOGESP</b> · Associação dos Profissionais de Políticas Públicas e Gestão Governamental do Município de SP</span>
-          <span><b>#ValorizaAPPGG</b> &nbsp;·&nbsp; Documento Oficial &nbsp;·&nbsp; Folha Municipal ago/2026</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODAL DE VISUALIZAÇÃO DA ONE-PAGE NA TELA -->
-    <div class="onepage-modal-backdrop" id="onepageModal" role="dialog" aria-modal="true" aria-labelledby="onepageModalTitle">
-      <div class="onepage-modal-card">
-        <div class="onepage-modal-toolbar">
-          <b id="onepageModalTitle">📄 Resumo Executivo para Decisão (One-Page A4)</b>
-          <div class="onepage-modal-toolbar-actions">
-            <button type="button" class="btn-print-action" id="modalPrintBtn">↓ Imprimir / Salvar em PDF (1 pág.)</button>
-            <button type="button" class="btn-close-action" id="closeOnepageModal">✕ Fechar</button>
-          </div>
-        </div>
-        <div class="onepage-modal-body">
-          <!-- Clone render for on-screen modal preview -->
-          <div class="onepage-sheet" id="modalSheetClone"></div>
-        </div>
-      </div>
-    </div>
     <main id="inicio">
       <section class="front">
         <div class="career-callout main-story">
@@ -292,17 +107,6 @@
           <p>
             <b>Distorção irrazoável entre carreiras:</b> Com a aplicação do PL 699, o AMCI ingressante recebe, somando dissídio e GEP, apenas <b>R$ 1.107 menos</b> que um APPGG no topo da carreira (referência 15: R$ 24.635). O encontro das remunerações que ocorria nos últimos níveis vira coisa do passado com a tabela proposta: ela concede vantagem remuneratória expressiva aos AMCIs em todas as 15 referências. Em 2015, a diferença no topo era de apenas 0,2%.
           </p>
-          <div style="margin-top:14px;padding-top:12px;border-top:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-            <div style="display:flex;gap:8px;align-items:center;">
-              <button type="button" class="preview-onepage-btn" onclick="document.getElementById('previewOnepageBtn').click()" style="background:#ffffff;border:1px solid #17324d;color:#17324d;font-weight:700;">
-                📄 Visualizar One-Page para Decisão
-              </button>
-              <button type="button" class="preview-onepage-btn" onclick="document.getElementById('exportPdf').click()" style="background:#17324d;border:1px solid #17324d;color:#ffffff;font-weight:700;">
-                ↓ Exportar PDF (1 pág.)
-              </button>
-            </div>
-            <span style="font-size:0.75rem;color:#64748b;font-weight:600;">Formato executivo de 1 página A4 para parlamentares e secretários</span>
-          </div>
         </div>
         <div class="table-title">
           <div>
