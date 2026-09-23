@@ -1,0 +1,8 @@
+.commitment-section{max-width:1500px;margin:0 auto;padding:0 24px 64px}
+.commitment-card{display:grid;grid-template-columns:.32fr 1.68fr;gap:28px;padding:28px 30px;border:1px solid var(--line);border-left:7px solid var(--gold);background:linear-gradient(135deg,#fff 0%,#fbf7ee 100%);box-shadow:0 16px 38px rgba(23,50,77,.07)}
+.commitment-card>span{padding-top:7px;color:#826744;font-size:.68rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.commitment-card h2{max-width:850px;margin:0;color:var(--navy);font:600 clamp(2rem,3.4vw,3.7rem)/.98 Newsreader}
+.commitment-card p{max-width:1050px;margin:18px 0 0;color:var(--ink);font-size:.94rem;line-height:1.65}
+.commitment-card p strong{color:var(--navy);font-weight:700}
+.commitment-card .commitment-question{margin-top:22px;padding-top:17px;border-top:1px solid var(--gold);color:var(--navy);font-size:1.05rem;font-weight:700}
+@media(max-width:760px){.commitment-section{padding:0 12px 48px}.commitment-card{grid-template-columns:1fr;gap:12px;padding:23px 20px}.commitment-card h2{font-size:2.35rem}.commitment-card p{font-size:.9rem;line-height:1.58}}

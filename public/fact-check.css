@@ -1,0 +1,39 @@
+.fact-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.fact-check{overflow:hidden;border:1px solid var(--line);border-top:6px solid #c53d31;background:#fff;box-shadow:0 16px 38px rgba(23,50,77,.09)}
+.fact-check header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 22px;border-bottom:1px solid var(--line)}
+.fact-check header span{color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.1em}
+.fact-check header b{padding:8px 12px;background:#fee5e1;color:#a6241b;border:1px solid #f3b5ae;font-size:.68rem;font-weight:800;letter-spacing:.08em;white-space:nowrap}
+.fact-check blockquote{margin:0;padding:30px 26px 24px;color:var(--navy);font:500 clamp(1.65rem,2.8vw,2.6rem)/1.04 Newsreader}
+.fact-verdict{margin:0 22px;padding:21px 4px;border-top:1px solid var(--line)}
+.fact-verdict strong{display:block;color:var(--navy);font-size:1rem}
+.fact-verdict p{margin:8px 0 0;color:var(--muted);font-size:.82rem;line-height:1.58}
+.fact-verdict p b{color:var(--navy)}
+.fact-check footer{padding:15px 22px;background:#f3f5f6;color:var(--ink);font-size:.74rem;font-weight:650}
+.fact-check.gep-check{border-top-color:var(--gold)}
+.fact-check.gep-check header b{background:#fff1c9;color:#73500a;border-color:#e7c568}
+.fact-check.false-check{border-top-color:var(--navy)}
+.fact-check.false-check header b{background:#dcebf5;color:#123f61;border-color:#9fc4dc}
+.fact-check.context-check{border-top-color:var(--green)}
+.fact-check.context-check header b{background:#dff2e9;color:#176447;border-color:#9bcdb7}
+@media(max-width:760px){.fact-check-grid{grid-template-columns:1fr}.fact-check header{align-items:flex-start}.fact-check blockquote{font-size:1.8rem}.fact-verdict p{font-size:.86rem}}
+
+.fact-check-grid{
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  overscroll-behavior-inline:contain;
+}
+.fact-check-grid::-webkit-scrollbar{display:none}
+.fact-check{flex:0 0 100%;min-height:430px;scroll-snap-align:start;scroll-snap-stop:always}
+.fact-check blockquote,.fact-verdict{max-width:980px}
+.fact-carousel-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}
+.fact-carousel-nav span{color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.08em}
+.fact-carousel-buttons{display:flex;gap:7px}
+.fact-carousel-buttons button{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-size:1.1rem;cursor:pointer}
+.fact-carousel-buttons button:disabled{opacity:.3;cursor:default}
+.fact-carousel-buttons button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:760px){.fact-check-grid{grid-template-columns:none}.fact-check{min-height:465px}.fact-check header{padding:16px 17px;gap:10px}.fact-check header b{padding:8px 10px;font-size:.66rem}.fact-check blockquote{padding:27px 20px 22px;font-size:1.9rem}.fact-verdict{margin:0 17px;padding:20px 3px}.fact-check footer{padding:15px 17px}.fact-carousel-nav{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.fact-check-grid{scroll-behavior:auto}}

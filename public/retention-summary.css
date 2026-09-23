@@ -1,0 +1,34 @@
+.retention-summary{max-width:1500px;margin:0 auto;padding:68px 24px;border-top:1px solid var(--line)}
+.retention-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr);gap:5vw;align-items:end}
+.retention-top h2{margin:0;color:var(--navy);font:500 clamp(2.7rem,5vw,5.6rem)/.94 Newsreader;letter-spacing:-.04em}
+.retention-top>div>p:last-child{max-width:760px;margin:18px 0 0;color:var(--muted);font-size:1rem;line-height:1.55}
+.retention-top>div>p strong{color:var(--navy)}
+.retention-top aside{padding:22px;border-top:4px solid var(--gold);background:#fff}
+.retention-top aside strong,.retention-top aside span,.retention-top aside small{display:block}
+.retention-top aside strong{color:var(--navy);font:500 4.8rem/.85 Newsreader}
+.retention-top aside span{margin-top:12px;color:var(--navy);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.retention-top aside small{margin-top:5px;color:var(--muted)}
+.destination-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:28px;background:var(--line);border:1px solid var(--line)}
+.destination-list article{min-width:0;padding:19px;background:#fff}
+.destination-list article div{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.destination-list span{color:var(--ink);font-size:.76rem;font-weight:700;line-height:1.25}
+.destination-list b{color:var(--navy);font:500 1.45rem/1 Newsreader}
+.destination-list i{display:block;width:100%;height:6px;margin:14px 0 10px;background:linear-gradient(90deg,var(--navy) var(--share),#e8ecef var(--share))}
+.destination-list p{margin:0;color:var(--muted);font-size:.69rem;line-height:1.45}
+.destination-list article:first-child{border-top:3px solid var(--gold)}
+.retention-reading{display:grid;grid-template-columns:.8fr 1.2fr;gap:4vw;margin-top:14px;padding:22px;background:var(--navy);color:#fff}
+.retention-reading strong{font:500 1.65rem/1.05 Newsreader}
+.retention-reading p{margin:0;color:#d6dfe5;font-size:.8rem;line-height:1.6}
+.retention-note{margin:12px 0 0;color:var(--muted);font-size:.68rem;line-height:1.5}
+.retention-top .eyebrow{font-size:0}
+.retention-top .eyebrow::after{content:"Para onde foram os APPGGs que deixaram a carreira";font-size:.67rem}
+.retention-top h2{font-size:0}
+.retention-top h2::after{content:"1 em cada 5.";font:500 clamp(2.7rem,5vw,5.6rem)/.94 Newsreader;letter-spacing:-.04em}
+.retention-top>div>p:last-child{display:none}
+.retention-top aside{display:none}
+.retention-note{font-size:0}
+.retention-note::after{content:"Categorias exibidas: 86%; demais destinos: 14%. Remuneração é tratada como risco, não como causa individual.";font-size:.68rem;line-height:1.5}
+@media(max-width:900px){.destination-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.retention-summary{padding:48px 12px}.retention-top{grid-template-columns:1fr;gap:20px}.retention-top h2{font-size:3rem}.retention-top aside{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}.retention-top aside strong{grid-row:1/3;font-size:4rem}.retention-top aside span{margin:0}.retention-top aside small{margin:2px 0 0}.destination-list{grid-template-columns:1fr}.destination-list article{padding:16px}.retention-reading{grid-template-columns:1fr;gap:12px;padding:18px}.retention-reading strong{font-size:1.8rem}}
+@media(max-width:700px){.retention-top h2{font-size:0}.retention-top h2::after{font-size:3rem}}
+.retention-top aside{display:none!important}

@@ -1,0 +1,148 @@
+.apogesp-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.apogesp-brand img {
+  display: block;
+  width: 64px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.apogesp-brand > .campaign-label {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 12px;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--navy);
+}
+
+.apogesp-brand .campaign-label b {
+  font-size: .69rem;
+  letter-spacing: .035em;
+  white-space: nowrap;
+}
+
+.apogesp-brand .campaign-label small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .62rem;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+  padding: 34px max(24px, 5vw);
+  background: var(--navy);
+  color: #fff;
+}
+
+.site-footer img {
+  display: block;
+  width: min(270px, 38vw);
+  height: auto;
+}
+
+.site-footer div {
+  max-width: 520px;
+  text-align: right;
+}
+
+.site-footer strong {
+  display: block;
+  font-family: Newsreader, Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.site-footer span {
+  display: block;
+  margin-top: 7px;
+  color: #cbd5df;
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .apogesp-brand {
+    gap: 8px;
+  }
+
+  .apogesp-brand img {
+    width: 54px;
+    height: 46px;
+  }
+
+  .apogesp-brand > .campaign-label {
+    padding-left: 9px;
+  }
+
+  .apogesp-brand .campaign-label b {
+    font-size: .6rem;
+  }
+
+  .apogesp-brand .campaign-label small {
+    font-size: .51rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 30px 20px;
+  }
+
+  .site-footer img {
+    width: min(240px, 78vw);
+  }
+
+  .site-footer div {
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .apogesp-brand .campaign-label {
+    display: none;
+  }
+}
+
+/* A leitura pública privilegia escala institucional e resultados. */
+.risk-card .staff-count,
+.risk-card > header small,
+.risk-card > footer,
+.risk-source {
+  display: none;
+}
+
+.project-focus b,
+.project-support b {
+  font-size: 0;
+}
+
+.project-focus b::after {
+  content: "Projeto-chave";
+  font-size: .66rem;
+}
+
+.project-support b::after {
+  content: "Outras frentes";
+  font-size: .66rem;
+}

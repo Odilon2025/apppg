@@ -1,0 +1,325 @@
+/* ==========================================================================
+   EVOLUÇÃO SALARIAL POR NÍVEL (PL 699/2026 × APPGG × AMCI + GEP)
+   Fiel à Nota Executiva APOGESP · Setembro 2026 (Página 2)
+   ========================================================================== */
+
+.evolution-section {
+  max-width: 1500px;
+  margin: 36px auto 0;
+  padding: 0 20px;
+}
+
+.evolution-card-container {
+  background: #ffffff;
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(23, 50, 77, 0.06);
+  padding: 32px 36px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.evolution-badge-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.evolution-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy, #17324d);
+}
+
+.evolution-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d97706;
+}
+
+.evolution-header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.evolution-heading h2 {
+  font-family: var(--font-title, Newsreader), Georgia, serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--navy, #17324d);
+  margin: 0 0 10px;
+}
+
+.evolution-heading h2 span.highlight-12 {
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 0 6px;
+  border-radius: 4px;
+  border-bottom: 2px solid #ef4444;
+}
+
+.evolution-heading p {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0;
+  max-width: 760px;
+  line-height: 1.5;
+}
+
+.evolution-legend-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  background: #f8fafc;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.78rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-line {
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-dashed {
+  width: 24px;
+  height: 0;
+  border-top: 2px dashed;
+  flex-shrink: 0;
+}
+
+/* Colors matching the graphic */
+.color-appgg { background-color: #f97316; }
+.color-amci { background-color: #dc2626; }
+.color-amci-gep { background-color: #7c3aed; }
+.color-ref-amci { border-color: #f59e0b !important; color: #b45309; }
+.color-ref-gep { border-color: #0284c7 !important; color: #0369a1; }
+
+/* SVG Chart Styles */
+.chart-container-wrap {
+  background: #fafaf9;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 20px 16px 14px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  display: block;
+}
+
+.chart-tooltip-box {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(23, 50, 77, 0.95);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  pointer-events: none;
+  min-width: 220px;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.chart-tooltip-box b {
+  color: #fbbf24;
+  font-size: 0.82rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* 4 Big Metric Cards (Page 2) */
+.evolution-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.evo-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 20px 18px;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.evo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.evo-card-crossing-1 {
+  border-top: 4px solid #16a34a;
+}
+
+.evo-card-crossing-2 {
+  border-top: 4px solid #0284c7;
+}
+
+.evo-card-difference {
+  border-top: 4px solid #b91c1c;
+}
+
+.evo-card-ceiling {
+  border-top: 4px solid #ea580c;
+}
+
+.evo-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.evo-card-crossing-1 .evo-card-tag { color: #15803d; }
+.evo-card-crossing-2 .evo-card-tag { color: #0369a1; }
+.evo-card-difference .evo-card-tag { color: #b91c1c; }
+.evo-card-ceiling .evo-card-tag { color: #c2410c; }
+
+.evo-card-value {
+  font-family: var(--font-title, Newsreader), Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy, #17324d);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.evo-card-crossing-1 .evo-card-value { color: #166534; }
+.evo-card-crossing-2 .evo-card-value { color: #075985; }
+.evo-card-difference .evo-card-value { color: #991b1b; }
+.evo-card-ceiling .evo-card-value { color: #9a3412; }
+
+.evo-card p {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+
+.evo-card-highlight-text {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.75rem;
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 8px;
+  margin-top: 6px;
+}
+
+/* Executive Callout Box (Page 2 pink box) */
+.evolution-callout-pink {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+
+.evolution-callout-pink ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evolution-callout-pink li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #7f1d1d;
+}
+
+.evolution-callout-pink li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.evolution-callout-pink strong {
+  color: #991b1b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .evolution-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .evolution-header-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .evolution-card-container {
+    padding: 20px 16px;
+  }
+  .evolution-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .evolution-heading h2 {
+    font-size: 1.6rem;
+  }
+  .evolution-legend-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

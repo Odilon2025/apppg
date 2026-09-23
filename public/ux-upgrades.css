@@ -1,0 +1,47 @@
+.decision-next{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:24px;padding:22px 24px;background:#edf2f5;border-left:3px solid var(--gold)}
+.decision-next div{display:flex;flex-direction:column;gap:4px}
+.decision-next div span{color:var(--gold);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+.decision-next strong{max-width:680px;color:var(--navy);font:500 1.32rem/1.2 Newsreader}
+.decision-next a{flex:0 0 auto;padding:11px 15px;border:1px solid var(--navy);color:var(--navy);font-size:.76rem;font-weight:700;text-decoration:none;transition:background .18s,color .18s}
+.decision-next a:hover,.decision-next a:focus-visible{background:var(--navy);color:#fff;outline:none}
+.project-browser{display:grid;grid-template-columns:1fr auto;gap:8px 18px;align-items:center;margin-top:22px}
+.project-filters{display:flex;gap:6px;overflow-x:auto;padding:2px 0;scrollbar-width:thin}
+.project-filters button{flex:0 0 auto;padding:9px 13px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:.7rem;font-weight:700;cursor:pointer}
+.project-filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.project-filters button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.project-browser p{margin:0;color:var(--navy);font-size:.72rem;font-weight:700;text-align:right}
+.project-browser>small{grid-column:1/-1;display:none;color:var(--muted);font-size:.7rem}
+.risk-card[hidden],.risk-grid-break[hidden]{display:none!important}
+.risk-card{animation:project-in .2s ease both}
+@keyframes project-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:700px){
+  .decision-next{align-items:stretch;flex-direction:column;gap:15px;margin-top:18px;padding:18px}
+  .decision-next a{text-align:center}
+  .project-browser{display:block;margin-top:18px}
+  .project-filters{margin:0 -12px;padding:3px 12px 8px}
+  .project-browser p{margin-top:6px;text-align:left}
+  .project-browser>small{display:block;margin-top:3px}
+  .risk-grid{display:flex!important;overflow-x:auto;gap:10px;margin-right:-12px;padding:1px 12px 15px 0;scroll-snap-type:x mandatory;scroll-padding-left:0;overscroll-behavior-inline:contain;scrollbar-width:thin}
+  .risk-card:not([hidden]){flex:0 0 min(86vw,350px);scroll-snap-align:start;scroll-snap-stop:always}
+  .risk-grid-break{display:none!important}
+  .front-table>div>:nth-child(3){background:#edf2f5}
+  .front-table>div:first-child>:nth-child(3){color:var(--navy);font-weight:700}
+  .front-table>div:not(:first-child)>:nth-child(3){margin:-9px 0;padding:9px 3px}
+  .front-table>div:first-child>:nth-child(4){background:#173f5e;color:#fff}
+  .front-table>div:not(:first-child)>:nth-child(4){background:#f7eee5;color:#7d3a25}
+  .impact-kpis article:nth-child(-n+2){background:#f7f8f8}
+  .impact-kpis article:nth-child(n+3){border-left:3px solid var(--gold)}
+}
+@media(prefers-reduced-motion:reduce){.risk-card{animation:none}.decision-next a{transition:none}}
+.mobile-impact-summary{display:none}
+@media(max-width:700px){
+  .front-table>div>:nth-child(2){position:sticky;left:0;z-index:1;background:#fff;box-shadow:5px 0 8px -8px rgba(23,50,77,.7)}
+  .front-table>div:first-child>:nth-child(2){z-index:3;background:var(--navy);color:#fff}
+  .simple-controls input[type=range]{height:44px;margin:2px 0 -5px;cursor:pointer}
+  .simple-controls input[type=range]::-webkit-slider-thumb{width:24px;height:24px}
+  .mobile-impact-summary{position:sticky;bottom:8px;z-index:16;display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0 auto 10px;border:1px solid var(--navy);background:var(--navy);box-shadow:0 8px 24px rgba(23,50,77,.18)}
+  .mobile-impact-summary span{display:flex;flex-direction:column;padding:10px 12px;background:#fff;color:#53636f;font-size:.75rem;line-height:1.2}
+  .mobile-impact-summary strong{margin-top:4px;color:var(--navy);font:500 1.12rem/1 Newsreader}
+  .base-note span,.base-note small,.table-notes p,.policy-basis span,.policy-basis small,.simple-controls label,.impact-kpis span,.impact-kpis small,.panel-head span,.panel-head small,.timeline-caption,.method-detail p,.history-table-head span,.history-table-head small{color:#53636f;font-size:.75rem}
+  .policy-basis span,.policy-basis small{color:#e1e8ed}
+}

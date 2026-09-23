@@ -1,0 +1,4 @@
+.pl-link{color:inherit;text-decoration-color:rgba(216,189,152,.7);text-underline-offset:3px}
+.pl-link:hover{color:#fff;text-decoration-color:#fff}
+.method a{color:var(--navy);font-weight:700;text-decoration-color:var(--gold);text-underline-offset:3px}
+.method a:hover{color:var(--red)}
