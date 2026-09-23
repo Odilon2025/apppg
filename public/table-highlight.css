@@ -1,1 +1,111 @@
-.front-table>div:not(:first-child)>:nth-child(4){align-self:stretch;display:flex;align-items:center;justify-content:flex-end;margin:-11px -5px;padding:11px 10px;background:#e8edf0;color:var(--navy);border-left:1px solid #d3dce1;border-right:1px solid #d3dce1;font-weight:700}.front-table>div:first-child>:nth-child(4){align-self:stretch;display:flex;align-items:center;justify-content:flex-end;margin:-11px -5px;padding:11px 10px;background:#173f5e;color:#fff}.front-table>div:hover:not(:first-child)>:nth-child(4){background:#dce5e9}.front-table .amci-total{font-family:Newsreader,serif;font-size:.9rem}
+/* Tabela de Comparação Direta: 4 Colunas (Nível | Ref. (Tempo de carreira) | APPGG | AMCI PL 699/2026) */
+.front-table > div {
+  display: grid !important;
+  grid-template-columns: 75px 200px 1fr 1fr !important;
+  gap: 16px !important;
+  align-items: center !important;
+  padding: 13px 20px !important;
+  border-bottom: 1px solid var(--line) !important;
+  font-size: 0.88rem !important;
+}
+
+.front-table > div:first-child {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.front-table > div:first-child > span:nth-child(3),
+.front-table > div:first-child > span:nth-child(4) {
+  text-align: right !important;
+  font-family: inherit !important;
+}
+
+.front-table .career-time {
+  display: inline-block;
+  font-size: 0.76rem;
+  color: var(--muted, #64748b);
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.front-table > div > strong:nth-child(3) {
+  text-align: right !important;
+  font-family: var(--font-title, Newsreader), Georgia, serif !important;
+  font-size: 1.15rem !important;
+  color: var(--navy) !important;
+}
+
+.front-table > div > span.amci-target {
+  text-align: right !important;
+  font-family: var(--font-title, Newsreader), Georgia, serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #b91c1c !important;
+}
+
+.front-table > div:not(:first-child) > :nth-child(4) {
+  align-self: stretch !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  margin: -13px -20px -13px 0 !important;
+  padding: 13px 20px !important;
+  background: #fdfaf6 !important;
+  border-left: 1px solid #e2e8f0 !important;
+}
+
+.front-table > div:hover:not(:first-child) > :nth-child(4) {
+  background: #fbf0e4 !important;
+}
+
+.front-table > div:first-child > :nth-child(4) {
+  align-self: stretch !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  margin: -13px -20px -13px 0 !important;
+  padding: 13px 20px !important;
+  background: #173f5e !important;
+  color: #ffffff !important;
+  border-left: 1px solid #285478 !important;
+}
+
+/* Tabela Mobile */
+.front-table-mobile > div {
+  display: grid !important;
+  grid-template-columns: 110px 1fr 1fr !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 11px 14px !important;
+  font-size: 0.8rem !important;
+}
+
+.front-table-mobile > div:first-child {
+  background: var(--navy) !important;
+  color: #fff !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+}
+
+.front-table-mobile .career-time {
+  display: block;
+  font-size: 0.68rem;
+  color: #64748b;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.front-table-mobile > div > span:nth-child(2),
+.front-table-mobile > div > b:nth-child(3) {
+  text-align: right !important;
+}
+
+.front-table-mobile > div > b:nth-child(3) {
+  color: #b91c1c !important;
+}

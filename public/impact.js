@@ -6,28 +6,44 @@ const brl = value => value.toLocaleString('pt-BR',{style:'currency',currency:'BR
 const brlMobile = value => value.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
 const pct = value => `${value.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})}%`;
 
+const CAREER_TIME = [
+  '3 anos de carreira',
+  '4,5 anos de carreira',
+  '6 anos de carreira',
+  '7,5 anos de carreira',
+  '9 anos de carreira',
+  '10,5 anos de carreira',
+  '12 anos de carreira',
+  '13,5 anos de carreira',
+  '15 anos de carreira',
+  '16,5 anos de carreira',
+  '18 anos de carreira',
+  '19,5 anos de carreira',
+  '21 anos de carreira',
+  '22,5 anos de carreira',
+  '24 anos de carreira'
+];
+
 function fullTarget(i){ return AMCI[i] + GEP; }
 
 function renderFront(){
-  const head = '<div><span>Nível</span><span>Ref.</span><span>APPGG</span><span>AMCI total</span><span>AMCI pós-PL</span><span>GEP</span><span>Diferença</span><span>Dif. %</span></div>';
+  const head = '<div><span>Nível</span><span>Ref. (Tempo de carreira)</span><span>APPGG (Atual)</span><span>AMCI (PL 699/2026)</span></div>';
   const rows = APP.map((app,i)=>{
     const level = i < 6 ? 'I' : i < 11 ? 'II' : 'III';
-    const total = fullTarget(i), diff = total-app;
-    return `<div><b>${level}</b><span>${i+1}</span><strong>${brl(app)}</strong><span class="amci-total">${brl(total)}</span><span>${brl(AMCI[i])}</span><span>${brl(GEP)}</span><em>${brl(diff)}</em><mark>+${pct(diff/app*100)}</mark></div>`;
+    return `<div><b>${level}</b><span><strong>${i+1}</strong> <small class="career-time">(${CAREER_TIME[i]})</small></span><strong>${brl(app)}</strong><span class="amci-target">${brl(AMCI[i])}</span></div>`;
   }).join('');
   $('frontTable').innerHTML = head + rows;
 
-  const mobileHead = '<div><span>Ref.</span><span>APPGG<br>(R$)</span><span>AMCI total<br>(R$)</span><span>Diferença<br>(R$)</span></div>';
+  const mobileHead = '<div><span>Ref. (Tempo)</span><span>APPGG (R$)</span><span>AMCI — PL 699 (R$)</span></div>';
   const mobileRows = APP.map((app,i)=>{
-    const total = fullTarget(i), diff = total-app;
-    return `<div><strong>${i+1}</strong><span>${brlMobile(app)}</span><b>${brlMobile(total)}</b><em>${brlMobile(diff)}</em></div>`;
+    return `<div><div><strong>${i+1}</strong> <small class="career-time">(${CAREER_TIME[i]})</small></div><span>${brlMobile(app)}</span><b>${brlMobile(AMCI[i])}</b></div>`;
   }).join('');
   let mobileTable = document.getElementById('frontTableMobile');
   if (!mobileTable) {
     mobileTable = document.createElement('div');
     mobileTable.id = 'frontTableMobile';
     mobileTable.className = 'front-table-mobile';
-    mobileTable.setAttribute('aria-label','Comparação remuneratória por referência');
+    mobileTable.setAttribute('aria-label','Comparação salarial direta por referência');
     $('frontTable').insertAdjacentElement('afterend', mobileTable);
   }
   mobileTable.innerHTML = mobileHead + mobileRows;
@@ -35,7 +51,7 @@ function renderFront(){
 
 renderFront();
 $('shareTop').addEventListener('click',async()=>{
-  const data={title:document.title,text:'APPGG × AMCI: tabela legal e impacto calculado sobre a folha de agosto/2026.',url:location.href};
+  const data={title:document.title,text:'APPGG × AMCI: comparação salarial direta e impacto orçamentário.',url:location.href};
   if(navigator.share){ try{await navigator.share(data);}catch(_){} }
   else { await navigator.clipboard.writeText(location.href); const button=$('shareTop'); const old=button.textContent; button.textContent='Link copiado'; setTimeout(()=>button.textContent=old,1400); }
 });
