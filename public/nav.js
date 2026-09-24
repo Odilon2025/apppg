@@ -78,4 +78,19 @@
       setActiveButton(currentSection);
     }, { passive: true });
   }
+
+  // Barra de Progresso de Leitura Contínua (TDAH & TOC)
+  const progressBar = document.getElementById('readingProgressBar');
+  if (progressBar) {
+    function updateProgress() {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollableHeight > 0) {
+        const pct = Math.min(100, Math.max(0, (window.scrollY / scrollableHeight) * 100));
+        progressBar.style.width = pct + '%';
+      }
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  }
 })();
