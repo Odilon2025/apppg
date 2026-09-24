@@ -1,10 +1,10 @@
-/* Tabela de Comparação Direta: 4 Colunas (Nível | Ref. (Tempo de carreira) | APPGG | AMCI PL 699/2026) */
+/* Tabela de Comparação Direta: 5 Colunas (Nível | Ref. (Tempo de carreira) | APPGG Atual | AMCI Atual | AMCI PL 699/2026) */
 .front-table > div {
   display: grid !important;
-  grid-template-columns: 75px 200px 1fr 1fr !important;
-  gap: 16px !important;
+  grid-template-columns: 60px 175px 1fr 1fr 1.15fr !important;
+  gap: 14px !important;
   align-items: center !important;
-  padding: 13px 20px !important;
+  padding: 12px 18px !important;
   border-bottom: 1px solid var(--line) !important;
   font-size: 0.88rem !important;
 }
@@ -19,7 +19,8 @@
 }
 
 .front-table > div:first-child > span:nth-child(3),
-.front-table > div:first-child > span:nth-child(4) {
+.front-table > div:first-child > span:nth-child(4),
+.front-table > div:first-child > span:nth-child(5) {
   text-align: right !important;
   font-family: inherit !important;
 }
@@ -40,55 +41,63 @@
   color: var(--navy) !important;
 }
 
+.front-table > div > span.amci-current {
+  text-align: right !important;
+  font-family: var(--font-title, Newsreader), Georgia, serif !important;
+  font-size: 1.12rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+}
+
 .front-table > div > span.amci-target {
   text-align: right !important;
   font-family: var(--font-title, Newsreader), Georgia, serif !important;
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
+  font-size: 1.18rem !important;
+  font-weight: 800 !important;
   color: #b91c1c !important;
 }
 
-.front-table > div:not(:first-child) > :nth-child(4) {
+.front-table > div:not(:first-child) > :nth-child(5) {
   align-self: stretch !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  margin: -13px -20px -13px 0 !important;
-  padding: 13px 20px !important;
+  margin: -12px -18px -12px 0 !important;
+  padding: 12px 18px !important;
   background: #fdfaf6 !important;
   border-left: 1px solid #e2e8f0 !important;
 }
 
-.front-table > div:hover:not(:first-child) > :nth-child(4) {
+.front-table > div:hover:not(:first-child) > :nth-child(5) {
   background: #fbf0e4 !important;
 }
 
-.front-table > div:first-child > :nth-child(4) {
+.front-table > div:first-child > :nth-child(5) {
   align-self: stretch !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  margin: -13px -20px -13px 0 !important;
-  padding: 13px 20px !important;
+  margin: -12px -18px -12px 0 !important;
+  padding: 12px 18px !important;
   background: #173f5e !important;
   color: #ffffff !important;
   border-left: 1px solid #285478 !important;
 }
 
-/* Tabela Mobile */
+/* Tabela Mobile (4 Colunas: Ref + Tempo | APPGG Atual | AMCI Atual | AMCI PL 699) */
 .front-table-mobile > div {
   display: grid !important;
-  grid-template-columns: 110px 1fr 1fr !important;
-  gap: 10px !important;
+  grid-template-columns: 100px 1fr 1fr 1.05fr !important;
+  gap: 8px !important;
   align-items: center !important;
-  padding: 11px 14px !important;
-  font-size: 0.8rem !important;
+  padding: 10px 10px !important;
+  font-size: 0.76rem !important;
 }
 
 .front-table-mobile > div:first-child {
   background: var(--navy) !important;
   color: #fff !important;
-  font-size: 0.68rem !important;
+  font-size: 0.65rem !important;
   font-weight: 700 !important;
 }
 
@@ -102,10 +111,14 @@
 }
 
 .front-table-mobile > div > span:nth-child(2),
-.front-table-mobile > div > b:nth-child(3) {
+.front-table-mobile > div > span:nth-child(3) {
   text-align: right !important;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
 }
 
-.front-table-mobile > div > b:nth-child(3) {
+.front-table-mobile > div > b:nth-child(4) {
+  text-align: right !important;
   color: #b91c1c !important;
+  font-weight: 700;
 }

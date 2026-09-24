@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="/source-links.css" />
     <link rel="stylesheet" href="/commitment-card.css" />
     <link rel="stylesheet" href="/evolution-curve.css" />
+    <link rel="stylesheet" href="/page-nav.css" />
   </head>
   <body>
     <style>
@@ -59,8 +60,6 @@
         ></a
       >
       <div class="header-actions">
-        <a href="#evolucao">Evolução por nível</a>
-        <a href="#impacto">Ver impacto fiscal</a>
         <button
           id="exportPdf"
           type="button"
@@ -71,8 +70,22 @@
         <button id="shareTop" type="button">Compartilhar</button>
       </div>
     </header>
+
+    <!-- Barra de Navegação Rápida com as 8 Seções -->
+    <nav class="section-nav-strip" aria-label="Navegação por seções e argumentos da campanha">
+      <a href="#comparacao-salarial" class="nav-section-btn active"><span class="nav-num">1</span> Comparação salarial</a>
+      <a href="#por-que-equiparar" class="nav-section-btn"><span class="nav-num">2</span> Por que equiparar?</a>
+      <a href="#informacoes-enganosas" class="nav-section-btn"><span class="nav-num">3</span> Informações enganosas</a>
+      <a href="#impacto-fiscal" class="nav-section-btn"><span class="nav-num">4</span> Impacto fiscal</a>
+      <a href="#entregas-appggs" class="nav-section-btn"><span class="nav-num">5</span> Entregas dos APPGGs</a>
+      <a href="#dados-evasao" class="nav-section-btn"><span class="nav-num">6</span> Dados de evasão</a>
+      <a href="#quem-apoia" class="nav-section-btn"><span class="nav-num">7</span> Quem apoia</a>
+      <a href="#fundamento-juridico" class="nav-section-btn"><span class="nav-num">8</span> Fundamento Jurídico</a>
+    </nav>
+
     <main id="inicio">
-      <section class="front">
+      <!-- PÁGINA 1: COMPARAÇÃO SALARIAL (INFORMAÇÕES INICIAIS, TABELA E GRÁFICO) -->
+      <section class="front" id="comparacao-salarial">
         <div class="career-callout main-story">
           <div class="fact-campaign-bar" style="margin-bottom:18px;">
             <span class="fact-campaign-title">
@@ -89,21 +102,50 @@
               <em class="word-mark copper">15 anos</em> para alcançar.
             </h1>
           </div>
-          <div class="career-values">
-            <article>
-              <span>PISO INICIAL DO AMCI</span><strong>R$ 21.527</strong>
-              <small>Rendimento do AMCI ingressante (básico pós-PL)</small>
-            </article>
-            <i>&gt;</i>
-            <article>
-              <span>11ª LINHA DA TABELA APPGG</span><strong>R$ 20.738</strong>
-              <small>Rendimento no nível II, ref. 11. Cerca de <b>15 ANOS</b> para chegar lá.</small>
-            </article>
-            <aside>
-              <strong>+ R$ 1.998</strong>
-              <span><b>SOMA A GEP À CONTA:</b> O PL reajusta a Gratificação CGM para R$ 1.998,73, elevando o rendimento inicial do AMCI para <b>R$ 23.526</b>.</span>
-            </aside>
+
+          <!-- BLOCO REORGANIZADO: GEP CONTÍGUO AO AMCI -->
+          <div class="career-values-contiguous">
+            <!-- Bloco Integrado do AMCI (Básico + GEP Contíguo) -->
+            <div class="amci-grouped-card">
+              <div class="amci-grouped-header">
+                <span class="amci-badge">AMCI · Ingressante (1º Dia)</span>
+                <span class="amci-total-highlight">Total Inicial: <strong>R$ 23.526</strong></span>
+              </div>
+              <div class="amci-contiguous-grid">
+                <div class="subsidio-part">
+                  <span>Subsídio Básico (PL 699)</span>
+                  <strong>R$ 21.527</strong>
+                  <small>Piso inicial bruto fixado no PL</small>
+                </div>
+                <div class="operator-plus">+</div>
+                <div class="gep-part">
+                  <span>Gratificação CGM (GEP)</span>
+                  <strong>R$ 1.998</strong>
+                  <small>Reajustada no PL para R$ 1.998,73</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comparador Central de Superioridade -->
+            <div class="career-central-comparator" aria-label="Superior a">
+              <span class="comparator-arrow">&gt;</span>
+              <span class="comparator-legend">SUPERIOR A</span>
+            </div>
+
+            <!-- Bloco do APPGG após 15 anos -->
+            <div class="appgg-grouped-card">
+              <div class="appgg-grouped-header">
+                <span class="appgg-badge">APPGG · Após 15 Anos</span>
+                <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Nível II · Ref. 11</span>
+              </div>
+              <div class="appgg-body">
+                <span>11ª Linha da Tabela APPGG</span>
+                <strong>R$ 20.738</strong>
+                <small>Exige cerca de <b>15 ANOS</b> de carreira para alcançar (sem gratificação de controle).</small>
+              </div>
+            </div>
           </div>
+
           <p>
             <b>Distorção irrazoável entre carreiras:</b> Com a aplicação do PL 699, o AMCI ingressante recebe, somando dissídio e GEP, apenas <b>R$ 1.107 menos</b> que um APPGG no topo da carreira (referência 15: R$ 24.635). O encontro das remunerações que ocorria nos últimos níveis vira coisa do passado com a tabela proposta: ela concede vantagem remuneratória expressiva aos AMCIs em todas as 15 referências. Em 2015, a diferença no topo era de apenas 0,2%.
           </p>
@@ -125,6 +167,7 @@
         <div class="front-table" id="frontTable"></div>
         <div class="table-notes">
           <p><b>APPGG (Atual):</b> tabela remuneratória vigente (15 referências em 3 níveis: I, II e III).</p>
+          <p><b>AMCI (Atual):</b> subsídio vigente dos Auditores com reajustes gerais aplicados à Lei 17.841/2022.</p>
           <p><b>AMCI (PL 699/2026):</b> subsídio proposto pelo Projeto de Lei nº 699/2026 encaminhado à Câmara.</p>
           <p><b>Tempo de carreira:</b> Ref. 1 são 3 anos (estágio probatório); depois, progressão regular a cada 18 meses (1,5 ano).</p>
         </div>
@@ -200,9 +243,19 @@
               <li><strong>Ingressante AMCI ganha praticamente o teto do APPGG:</strong> O AMCI ingressante recebe, somando dissídio e GEP (R$ 23.526,23), apenas <strong>R$ 1.107 a menos</strong> que um APPGG no topo da carreira (R$ 24.634,90).</li>
             </ul>
           </div>
+          <!-- Card de Aprofundamento para a Página 2 -->
+          <div class="section-deep-dive-card">
+            <div class="deep-dive-content">
+              <span>Aprofundamento · Página 2</span>
+              <h4>Por que equiparar as duas carreiras?</h4>
+              <p>Entenda a simetria institucional do QPGG, o histórico de 10 anos de paridade e as razões estruturais da equiparação.</p>
+            </div>
+            <a href="#por-que-equiparar" class="btn-deep-dive">Avançar para: Por que equiparar? →</a>
+          </div>
         </div>
       </section>
-      <section class="decision-brief" id="decisao">
+      <!-- PÁGINA 2: POR QUE EQUIPARAR? -->
+      <section class="decision-brief" id="por-que-equiparar">
         <div class="case-title">
           <div>
             <p class="eyebrow">Nota Executiva APOGESP &nbsp;·&nbsp; Setembro 2026 &nbsp;·&nbsp; Decisão em 90 segundos</p>
@@ -310,8 +363,479 @@
             <p class="commitment-question">Com o envio do PL 699/2026 sem a previsão da carreira APPGG, perguntamos: <strong>o que mudou?</strong></p>
           </div>
         </article>
+      
+          <!-- Card de Aprofundamento para a Página 3 -->
+          <div class="section-deep-dive-card">
+            <div class="deep-dive-content">
+              <span>Aprofundamento · Página 3</span>
+              <h4>Informações enganosas e Fact Check</h4>
+              <p>Veja a checagem rigorosa dos argumentos distorcidos sobre reajustes passados e a reconstituição da tabela de 2022.</p>
+            </div>
+            <a href="#informacoes-enganosas" class="btn-deep-dive">Avançar para: Informações enganosas →</a>
+          </div>
       </section>
-      <section class="project-risks" id="projetos-em-risco">
+<!-- PÁGINA 3: INFORMAÇÕES ENGANOSAS -->
+      <section class="history" id="informacoes-enganosas">
+        <!-- Top Campaign Header Bar -->
+        <div class="fact-campaign-bar">
+          <span class="fact-campaign-title">
+            <span class="fact-campaign-dot"></span>
+            CAMPANHA #VALORIZAAPPGG &nbsp;·&nbsp; SETEMBRO 2026 &nbsp;·&nbsp; FACT CHECK PL 699
+          </span>
+          <span class="fact-campaign-badge">APPGG</span>
+        </div>
+
+        <!-- Yellow Hero Headline Card -->
+        <div class="fact-hero-card">
+          <div class="fact-hero-body">
+            <h2>Um dado isolado pode ser verdadeiro — e ainda assim, enganoso.</h2>
+            <p>O que é fato sobre as propostas no PL, o que é distorção</p>
+          </div>
+        </div>
+
+        <!-- Section Title & Divider -->
+        <div class="fact-section-divider">
+          <div class="fact-divider-text">
+            <span class="fact-divider-icon">⚖️</span>
+            <h3>O que é fato, o que é distorção</h3>
+          </div>
+          <div class="fact-divider-line"></div>
+        </div>
+
+        <!-- Interactive Fact-Check Carousel / Grid Container -->
+        <div class="fact-carousel-container" id="factCarouselApp">
+          <div class="fact-check-grid" role="region" aria-label="Carrossel de Fact-Check da Campanha">
+            
+            <!-- Item 1 -->
+            <article class="fact-check item-enganoso" data-index="0" data-number="1" data-label="33% x 10%" data-verdict="ENGANOSO">
+              <header>
+                <div class="fact-number-badge">1</div>
+                <div class="fact-verdict-pill pill-enganoso">ENGANOSO</div>
+              </header>
+              <blockquote>
+                “Em 2022, os APPGGs tiveram reajuste de 33%; os AMCIs, de apenas 10%.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      O reajuste de 33% recompôs o valor de ingresso — não a carreira inteira. As referências finais da tabela quase não mudaram. Mesmo depois da mudança, o piso do APPGG seguiu abaixo do piso dos auditores.
+                    </p>
+                    <div class="fact-extra-context">
+                      <strong>Contexto dos dados:</strong> Em 2022, os maiores percentuais foram concentrados na base para viabilizar concurso público. Na referência 15 (topo), a variação foi de apenas 0,2%. O piso APPGG continuou <b>R$ 3.300 abaixo</b> do AMCI, e a tabela permaneceu comprimida.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                Reajustar o ingresso não equivale a valorizar toda a carreira.
+              </footer>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="fact-check item-falso" data-index="1" data-number="2" data-label="Efeito Imediato" data-verdict="FALSO">
+              <header>
+                <div class="fact-number-badge">2</div>
+                <div class="fact-verdict-pill pill-falso">FALSO</div>
+              </header>
+              <blockquote>
+                “Incluir os APPGGs exige efeito integral e imediato.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      Não é verdade. A correção pode começar depois, aos poucos, em etapas — desde que exista um plano claro para chegar lá. Dá pra ser responsável com as contas públicas e ainda assim corrigir a distorção.
+                    </p>
+                    <div class="fact-extra-context">
+                      <strong>Modulação e LRF:</strong> A vigência financeira pode ser fixada para <b>janeiro de 2027</b> ou <b>maio de 2027 (data-base)</b>, garantindo <b>impacto zero em 2026</b>. A própria Câmara Municipal já adotou solução idêntica em leis recentes de outras carreiras municipais.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                Dá para ser responsável com as contas públicas e ainda assim corrigir a distorção.
+              </footer>
+            </article>
+
+            <!-- Item 3 -->
+            <article class="fact-check item-enganoso" data-index="2" data-number="3" data-label="Cargos Criados" data-verdict="ENGANOSO">
+              <header>
+                <div class="fact-number-badge">3</div>
+                <div class="fact-verdict-pill pill-enganoso">ENGANOSO</div>
+              </header>
+              <blockquote>
+                “O impacto deve contar automaticamente todos os cargos criados.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      Cargo vazio não custa nada até ser ocupado. A conta do impacto financeiro precisa deixar claro quantas pessoas já estão no cargo, quantas devem entrar e quantas vagas continuam sem ninguém.
+                    </p>
+                    <div class="fact-alert-note">
+                      Dos concursados que aguardam nomeação, muitos não pretendem tomar posse pela desvalorização da carreira. Ainda há tempo.
+                    </div>
+                    <div class="fact-extra-context">
+                      <strong>Transparência do impacto:</strong> O cálculo correto se baseia nos <b>175 a 190 servidores ativos na folha municipal</b> (custo de cerca de <b>R$ 34 milhões anuais</b>, ou R$ 33,8 mi no cenário B2), e não em contas inflacionadas por vagas sem provimento.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                A conta real precisa distinguir vínculos ativos, ingressos previstos e vagas vazias.
+              </footer>
+            </article>
+
+            <!-- Item 4 -->
+            <article class="fact-check item-ressalva" data-index="3" data-number="4" data-label="Recebimento da GEP" data-verdict="VERDADEIRO, COM RESSALVA">
+              <header>
+                <div class="fact-number-badge">4</div>
+                <div class="fact-verdict-pill pill-ressalva">VERDADEIRO, COM RESSALVA</div>
+              </header>
+              <blockquote>
+                “APPGG também pode receber a GEP*.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      Somente quando trabalha na CGM. APPGGs em outros órgãos ficam de fora, mesmo quando atuam diretamente no controle interno.
+                    </p>
+                    <div class="fact-highlight-box">
+                      <strong>96% dos APPGGs NÃO recebem GEP.</strong>
+                    </div>
+                    <p class="fact-footnote">
+                      *Gratificação por serviços prestados na Controladoria (CGM) — Lei nº 15.764/2013, agora reajustada no PL 699/2026 para R$ 1.998,73/mês.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                A GEP é restrita à Controladoria; APPGGs nas áreas finalísticas das secretarias não a recebem.
+              </footer>
+            </article>
+
+            <!-- Item 5 -->
+            <article class="fact-check item-falso" data-index="4" data-number="5" data-label="Diferença na Tabela" data-verdict="FALSO">
+              <header>
+                <div class="fact-number-badge">5</div>
+                <div class="fact-verdict-pill pill-falso">FALSO</div>
+              </header>
+              <blockquote>
+                “A diferença existe apenas no início da carreira.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      A assimetria atravessa a tabela inteira. Na projeção de 2026, a remuneração da outra carreira supera a do APPGG em todas as referências — do início ao topo. <b>Nunca foi assim.</b>
+                    </p>
+                    <div class="fact-extra-context">
+                      <strong>Abismo remuneratório:</strong> Um APPGG leva cerca de <b>15 anos</b> de dedicação para alcançar o valor que o AMCI recebe no 1º dia. No topo (ref. 15), o AMCI alcança R$ 38.752 com GEP contra R$ 24.635 do APPGG — diferença brutal de <b>+57,3%</b> (R$ 14.117/mês). Em 2015, a diferença no topo era de apenas 0,2%.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                A assimetria atravessa as 15 referências — do ingresso ao topo da carreira.
+              </footer>
+            </article>
+
+            <!-- Item 6 -->
+            <article class="fact-check item-falso" data-index="5" data-number="6" data-label="Relação Institucional" data-verdict="FALSO">
+              <header>
+                <div class="fact-number-badge">6</div>
+                <div class="fact-verdict-pill pill-falso">FALSO</div>
+              </header>
+              <blockquote>
+                “APPGG e AMCI são carreiras sem relação institucional.”
+              </blockquote>
+              <div class="fact-verdict">
+                <div class="fact-arrow-line">
+                  <span class="fact-arrow">➜</span>
+                  <div class="fact-arrow-content">
+                    <p class="fact-main-verdict">
+                      As duas fazem parte do mesmo grupo de carreiras (o QPGG), criado por lei em 2015 justamente para unir gestão e controle, com funções distintas e complementares. <b>Diferença de atribuição não significa ausência de vínculo.</b>
+                    </p>
+                    <div class="fact-extra-context">
+                      <strong>Mesmo quadro e paridade federal:</strong> Ambas foram estruturadas pela Lei nº 16.193/2015 sob a mesma natureza técnico-científica e mesmo regime de subsídio. No Governo Federal (EPPGG e Auditor Federal da CGU) e em outros entes, as duas carreiras têm remuneração equivalente.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                Mesma lei de criação, mesmo regime de subsídio e paridade histórica no plano federal.
+              </footer>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Yellow Campaign Footer Callout Banner -->
+        <div class="fact-footer-callout">
+          <div class="fact-footer-callout-body">
+            <p>Analisar política pública exige a foto completa — não um recorte conveniente do passado.</p>
+            <span class="fact-footer-tag">#ValorizaAPPGG</span>
+          </div>
+        </div>
+        <p class="fact-sources-caption">
+          Fontes: PL 699/2026; Lei Municipal 16.193/2015; folha municipal ago/2026.
+        </p>
+
+        <div class="history-kpis">
+          <article>
+            <span>APPGG · piso 2022</span><strong>R$ 12.000</strong
+            ><small>+33,3% sobre 2015</small>
+          </article>
+          <article>
+            <span>AMCI · piso 2022</span><strong>R$ 15.300</strong
+            ><small>+10,1% sobre 2015</small>
+          </article>
+          <article class="gap">
+            <span>Diferença que permaneceu</span><strong>R$ 3.300</strong
+            ><small>sem considerar gratificações</small>
+          </article>
+          <article>
+            <span>Tabela integral</span><strong>11,8% × 5,2%</strong
+            ><small>variação da soma das 15 referências</small>
+          </article>
+        </div>
+        <!-- INFOGRÁFICO HISTÓRICO 2015 -> 2022 (CONFORME FOTO DO INFOGRÁFICO OFICIAL) -->
+        <div class="history-infographic-card">
+          <!-- Balão de Anotação Superior e Colchete Indicador (30x10) -->
+          <div class="photo-callout-header">
+            <div class="photo-quote-box">
+              “...esses números (30x10) que estão circulando, gerando ruído, como se a reivindicação atual não fosse justa.”
+            </div>
+            <div class="photo-bracket-wrap">
+              <svg class="photo-bracket-svg" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M 450,0 L 450,16 M 340,16 L 870,16 M 340,16 L 340,34 M 870,16 L 870,34" stroke="#111827" stroke-width="2.5" fill="none" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="history-table-container">
+            <div class="history-table-banner">
+              Crescimento salarial 2015 → 2022, por carreira e por nível (Lei 16.193/2015 vs. Lei 17.841/2022)
+            </div>
+            <div class="history-table-scroll" id="historyTable"></div>
+          </div>
+
+          <div class="photo-step-title">
+            <span class="photo-step-badge">2</span>
+            <h3>O que essa versão parcial (dos 30x10) esconde?</h3>
+          </div>
+        </div>
+        <div class="history-reading">
+          <article>
+            <span>01</span>
+            <div>
+              <b>O aumento foi concentrado no início.</b>
+              <p>
+                A prioridade de 2022 foi recompor o ingresso antes do concurso.
+                O topo quase não avançou.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <b>A diferença permaneceu.</b>
+              <p>
+                O piso subiu, mas continuou abaixo do AMCI. Nas 15 referências,
+                a tabela APPGG cresceu 11,8%.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <b>O compromisso ficou pendente.</b>
+              <p>
+                A assimetria veio do desenho remuneratório de 2015, na gestão
+                Haddad. Segundo a memória negocial da carreira, Rodrigo Goulart
+                assumiu compromisso político de buscar a convergência das
+                tabelas — expectativa que não se concretizou.
+              </p>
+            </div>
+          </article>
+        </div>
+      
+        <!-- Card de Aprofundamento para a Página 4 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Aprofundamento · Página 4</span>
+            <h4>Impacto fiscal estimado e vigência</h4>
+            <p>Conheça a estimativa técnica de R$ 34,6M/ano, a previsão dos 42 novos ingressantes já programados e a ausência de choque orçamentário.</p>
+          </div>
+          <a href="#impacto-fiscal" class="btn-deep-dive">Avançar para: Impacto fiscal →</a>
+        </div>
+      </section>
+
+<!-- PÁGINA 4: IMPACTO FISCAL -->
+      <section class="simulator impact-summary" id="impacto-fiscal">
+        <div class="sim-heading">
+          <p class="eyebrow">Estimativa técnica &nbsp;·&nbsp; Nota Executiva APOGESP (Página 3)</p>
+          <h2><span class="underline-word">Impacto fiscal estimado e vigência.</span></h2>
+          <p>
+            Estimativa conservadora de equiparação da carreira APPGG sobre a folha de servidores em efetivo exercício.
+          </p>
+        </div>
+
+        <div class="impact-total">
+          <div>
+            <span>Custo anual estimado (folha direta)</span><strong>R$ 34,6 milhões</strong>
+            <small>R$ 34.576.408,80 na folha direta · Dotação dos 42 concursados já garantida por Ricardo Nunes</small>
+          </div>
+          <p>
+            <b>R$ 2,59 milhões</b> de incremento remuneratório mensal<br />
+            <b>× 13⅓ folhas</b> (12 meses + 13º + ⅓ constitucional de férias)
+          </p>
+        </div>
+
+        <div class="impact-assumptions">
+          <article>
+            <span>Escopo da estimativa</span><strong>218 servidores</strong>
+            <p>176 servidores da folha municipal + 42 concursados (dotação orçamentária já garantida por Ricardo Nunes).</p>
+          </article>
+          <article>
+            <span>Alvo remuneratório</span><strong>Equiparação ao AMCI</strong>
+            <p>Mesma tabela de subsídios do PL 699/2026 nas 15 referências.</p>
+          </article>
+          <article>
+            <span>Horizonte anual</span><strong>13⅓ folhas</strong>
+            <p>12 meses + 13º subsídio + ⅓ constitucional de férias.</p>
+          </article>
+          <article class="fund">
+            <span>Premissa de vigência</span><strong>Custo zero em 2026</strong>
+            <p>
+              Modulação temporal da vigência financeira para 2027 assegura impacto nulo em 2026.
+            </p>
+          </article>
+        </div>
+
+        <!-- DETALHAMENTO DO IMPACTO E DOTAÇÃO DOS 42 APROVADOS (AUTORIZAÇÃO PRÉVIA RICARDO NUNES) -->
+        <div class="approved-breakdown-card" style="margin-top:24px;background:#fdfaf6;border:1px solid #fed7aa;border-left:5px solid #d97706;border-radius:8px;padding:22px 26px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+              <span style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:#9a3412;background:#ffedd5;padding:4px 10px;border-radius:4px;text-transform:uppercase;">
+                Detalhamento Orçamentário
+              </span>
+              <strong style="color:var(--navy);font-size:1.1rem;font-family:var(--font-title, Newsreader), Georgia, serif;">
+                Impacto dos 42 novos aprovados já previsto anteriormente
+              </strong>
+            </div>
+            <span style="font-size:0.76rem;font-weight:700;color:#9a3412;background:#fff;padding:4px 10px;border:1px solid #fed7aa;border-radius:4px;">
+              Autorização prévia: Prefeito Ricardo Nunes
+            </span>
+          </div>
+          <p style="margin:0 0 16px;font-size:0.88rem;color:#334155;line-height:1.6;">
+            O impacto orçamentário referente à nomeação dos <strong>42 novos APPGGs aprovados em concurso público</strong> não representa despesa surpresa ou não provisionada. A dotação orçamentária e a autorização formal para o chamamento desses profissionais <strong>já foram concedidas em momento anterior pelo Prefeito Ricardo Nunes</strong>, estando o seu custo básico de ingresso na folha municipal plenamente programado e absorvido pela Prefeitura.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;padding-top:14px;border-top:1px solid #fed7aa;">
+            <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:6px;padding:16px 18px;">
+              <b style="display:block;font-size:0.75rem;color:#9a3412;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">1. Admissão já programada</b>
+              <p style="margin:0;font-size:0.83rem;color:#475569;line-height:1.55;">
+                O desembolso relativo ao ingresso desses 42 novos servidores já contava com previsão orçamentária expressa autorizada pela Administração Municipal.
+              </p>
+            </div>
+            <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:6px;padding:16px 18px;">
+              <b style="display:block;font-size:0.75rem;color:#9a3412;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">2. Retorno imediato em eficiência</b>
+              <p style="margin:0;font-size:0.83rem;color:#475569;line-height:1.55;">
+                A alocação dos novos gestores reforça imediatamente secretarias estratégicas (SEGES, Finanças, Saúde, Educação, SGM), gerando ganhos de eficiência que superam o investimento na carreira.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABELA OFICIAL DE CENÁRIOS TEMPORAIS DE VIGÊNCIA (PÁGINA 3) -->
+        <div class="scenarios-container">
+          <div class="scenarios-header">
+            <div>
+              <span class="eyebrow" style="color:#b45309;font-size:0.72rem;font-weight:700;display:block;margin-bottom:4px;">MODELAGEM DA NOTA EXECUTIVA</span>
+              <h3>Cenários Temporais de Vigência</h3>
+            </div>
+            <span><b>Base:</b> 176 servidores da folha + 42 ingressantes = 218 pessoas</span>
+          </div>
+          <div class="scenarios-table-wrap">
+            <table class="scenarios-table">
+              <thead>
+                <tr>
+                  <th>Início da Vigência</th>
+                  <th style="text-align:center;">Meses até Dez/28</th>
+                  <th style="text-align:right;">Impacto Anual</th>
+                  <th style="text-align:right;">Acumulado até Dez/28</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Outubro/2026</strong></td>
+                  <td class="months">27</td>
+                  <td class="num">R$ 34.576.408,80</td>
+                  <td class="num">R$ 77.796.919,80</td>
+                </tr>
+                <tr class="featured-scenario">
+                  <td><strong>Janeiro/2027</strong> <span class="scenario-badge">Recomendado</span></td>
+                  <td class="months">24</td>
+                  <td class="num">R$ 34.576.408,80</td>
+                  <td class="num">R$ 69.152.817,60</td>
+                </tr>
+                <tr>
+                  <td><strong>Maio/2027</strong> <small style="color:#64748b;">(Data-base municipal)</small></td>
+                  <td class="months">20</td>
+                  <td class="num">R$ 34.576.408,80</td>
+                  <td class="num">R$ 57.627.348,00</td>
+                </tr>
+                <tr>
+                  <td><strong>Janeiro/2028</strong></td>
+                  <td class="months">12</td>
+                  <td class="num">R$ 34.576.408,80</td>
+                  <td class="num">R$ 34.576.408,80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="scenarios-footer-banner">
+            <div>
+              <p>Valorizar os APPGGs é fortalecer São Paulo.</p>
+              <span style="display:block;margin-top:4px;font-size:0.75rem;color:#78350f;">A dotação orçamentária dos 42 novos concursados já foi previamente autorizada e garantida pelo Prefeito Ricardo Nunes.</span>
+            </div>
+            <span style="font-weight:800;font-size:0.85rem;color:#713f12;">#ValorizaAPPGG</span>
+          </div>
+        </div>
+
+        <div class="impact-bullets" style="margin-top:20px;padding:18px;background:#f8fafc;border-left:4px solid var(--navy);font-size:0.82rem;color:var(--navy);line-height:1.6">
+          <b style="font-size:0.88rem;">Premissas do simulador (Nota Executiva APOGESP):</b>
+          <ul style="margin:8px 0 0 18px;list-style:disc">
+            <li><strong>Impacto direto:</strong> Incremento mensal de R$ 2,59 milhões; anualização por 12 meses + 13º + ⅓ constitucional de férias (13⅓ folhas); sem encargos patronais adicionais (<strong>R$ 34.576.408,80 anuais</strong>).</li>
+            <li><strong>Dotação assegurada dos 42 ingressantes:</strong> A dotação orçamentária para o chamamento dos 42 novos concursados já foi previamente autorizada e garantida pela gestão do Prefeito Ricardo Nunes. O custo anual da valorização é amplamente compensado pela economia e receitas geradas pelas entregas dos gestores (ônibus elétricos, compras públicas e modernização do IPTU).</li>
+            <li><strong>Acumulados:</strong> Os acumulados comparam apenas datas de vigência da correção integral até dezembro de 2028, oferecendo previsibilidade total para a LRF e a LDO municipal.</li>
+            <li><strong>Fontes oficiais:</strong> PL 699/2026; Lei Municipal 16.193/2015; folha de pagamento municipal de agosto/2026; PAI janeiro/2026; APOGESP. Valores nominais de 2026.</li>
+          </ul>
+        </div>
+      
+        <!-- Card de Aprofundamento para a Página 5 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Aprofundamento · Página 5</span>
+            <h4>Entregas dos APPGGs e Projetos em Risco</h4>
+            <p>Superado o dado fiscal, conheça o valor das entregas da carreira para São Paulo e os projetos prioritários que dependem desses profissionais.</p>
+          </div>
+          <a href="#entregas-appggs" class="btn-deep-dive">Avançar para: Entregas dos APPGGs →</a>
+        </div>
+</section>
+      <p class="method">
+        Fontes: Folha de pagamento da Prefeitura de São Paulo, ago/2026; tabela APPGG mai/2026; <a href="https://www.saopaulo.sp.leg.br/iah/fulltext/projeto/PL0699-2026.pdf" target="_blank" rel="noopener">PL 699/2026 ↗</a>; Lei Municipal 16.193/2015; PAI jan/2026; APOGESP.
+      </p>
+      
+<!-- PÁGINA 5: ENTREGAS DOS APPGGS -->
+      <section class="project-risks" id="entregas-appggs">
         <div class="risk-heading">
           <div>
             <p class="eyebrow">Capacidade que vira entrega</p>
@@ -753,429 +1277,195 @@
           áreas citadas. <b>Fontes:</b> PAI jan/2026; folha ago/2026; SEPE
           set/2026.
         </div>
-      </section>
-      <section class="history" id="historico">
-        <!-- Top Campaign Header Bar -->
-        <div class="fact-campaign-bar">
-          <span class="fact-campaign-title">
-            <span class="fact-campaign-dot"></span>
-            CAMPANHA #VALORIZAAPPGG &nbsp;·&nbsp; SETEMBRO 2026 &nbsp;·&nbsp; FACT CHECK PL 699
-          </span>
-          <span class="fact-campaign-badge">APPGG</span>
-        </div>
-
-        <!-- Yellow Hero Headline Card -->
-        <div class="fact-hero-card">
-          <div class="fact-hero-watermark">...30% x 10%?</div>
-          <div class="fact-hero-body">
-            <h2>Um dado isolado pode ser verdadeiro — e ainda assim, enganoso.</h2>
-            <p>O que o PL 699 propõe para as carreiras do QPGG</p>
+      
+        <!-- Card de Aprofundamento para a Página 6 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Aprofundamento · Página 6</span>
+            <h4>Dados de evasão da carreira</h4>
+            <p>Veja os dados auditados de perda de servidores estratégicos para outros órgãos e governos decorrente da defasagem salarial.</p>
           </div>
+          <a href="#dados-evasao" class="btn-deep-dive">Avançar para: Dados de evasão →</a>
         </div>
+</section>
+      
 
-        <!-- Section Title & Divider -->
-        <div class="fact-section-divider">
-          <div class="fact-divider-text">
-            <span class="fact-divider-icon">⚖️</span>
-            <h3>O que é fato, o que é distorção</h3>
-          </div>
-          <div class="fact-divider-line"></div>
-        </div>
-
-        <!-- Interactive Fact-Check Carousel / Grid Container -->
-        <div class="fact-carousel-container" id="factCarouselApp">
-          <div class="fact-check-grid" role="region" aria-label="Carrossel de Fact-Check da Campanha">
-            
-            <!-- Item 1 -->
-            <article class="fact-check item-enganoso" data-index="0" data-number="1" data-label="33% x 10%" data-verdict="ENGANOSO">
-              <header>
-                <div class="fact-number-badge">1</div>
-                <div class="fact-verdict-pill pill-enganoso">ENGANOSO</div>
-              </header>
-              <blockquote>
-                “Em 2022, os APPGGs tiveram reajuste de 33%; os AMCIs, de apenas 10%.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      O reajuste de 33% recompôs o valor de ingresso — não a carreira inteira. As referências finais da tabela quase não mudaram. Mesmo depois da mudança, o piso do APPGG seguiu abaixo do piso dos auditores.
-                    </p>
-                    <div class="fact-extra-context">
-                      <strong>Contexto dos dados:</strong> Em 2022, os maiores percentuais foram concentrados na base para viabilizar concurso público. Na referência 15 (topo), a variação foi de apenas 0,2%. O piso APPGG continuou <b>R$ 3.300 abaixo</b> do AMCI, e a tabela permaneceu comprimida.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                Reajustar o ingresso não equivale a valorizar toda a carreira.
-              </footer>
-            </article>
-
-            <!-- Item 2 -->
-            <article class="fact-check item-falso" data-index="1" data-number="2" data-label="Efeito Imediato" data-verdict="FALSO">
-              <header>
-                <div class="fact-number-badge">2</div>
-                <div class="fact-verdict-pill pill-falso">FALSO</div>
-              </header>
-              <blockquote>
-                “Incluir os APPGGs exige efeito integral e imediato.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      Não é verdade. A correção pode começar depois, aos poucos, em etapas — desde que exista um plano claro para chegar lá. Dá pra ser responsável com as contas públicas e ainda assim corrigir a distorção.
-                    </p>
-                    <div class="fact-extra-context">
-                      <strong>Modulação e LRF:</strong> A vigência financeira pode ser fixada para <b>janeiro de 2027</b> ou <b>maio de 2027 (data-base)</b>, garantindo <b>impacto zero em 2026</b>. A própria Câmara Municipal já adotou solução idêntica em leis recentes de outras carreiras municipais.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                Dá para ser responsável com as contas públicas e ainda assim corrigir a distorção.
-              </footer>
-            </article>
-
-            <!-- Item 3 -->
-            <article class="fact-check item-enganoso" data-index="2" data-number="3" data-label="Cargos Criados" data-verdict="ENGANOSO">
-              <header>
-                <div class="fact-number-badge">3</div>
-                <div class="fact-verdict-pill pill-enganoso">ENGANOSO</div>
-              </header>
-              <blockquote>
-                “O impacto deve contar automaticamente todos os cargos criados.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      Cargo vazio não custa nada até ser ocupado. A conta do impacto financeiro precisa deixar claro quantas pessoas já estão no cargo, quantas devem entrar e quantas vagas continuam sem ninguém.
-                    </p>
-                    <div class="fact-alert-note">
-                      Dos concursados que aguardam nomeação, muitos não pretendem tomar posse pela desvalorização da carreira. Ainda há tempo.
-                    </div>
-                    <div class="fact-extra-context">
-                      <strong>Transparência do impacto:</strong> O cálculo correto se baseia nos <b>175 a 190 servidores ativos na folha municipal</b> (custo de cerca de <b>R$ 34 milhões anuais</b>, ou R$ 33,8 mi no cenário B2), e não em contas inflacionadas por vagas sem provimento.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                A conta real precisa distinguir vínculos ativos, ingressos previstos e vagas vazias.
-              </footer>
-            </article>
-
-            <!-- Item 4 -->
-            <article class="fact-check item-ressalva" data-index="3" data-number="4" data-label="Recebimento da GEP" data-verdict="VERDADEIRO, COM RESSALVA">
-              <header>
-                <div class="fact-number-badge">4</div>
-                <div class="fact-verdict-pill pill-ressalva">VERDADEIRO, COM RESSALVA</div>
-              </header>
-              <blockquote>
-                “APPGG também pode receber a GEP*.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      Somente quando trabalha na CGM. APPGGs em outros órgãos ficam de fora, mesmo quando atuam diretamente no controle interno.
-                    </p>
-                    <div class="fact-highlight-box">
-                      <strong>96% dos APPGGs NÃO recebem GEP.</strong>
-                    </div>
-                    <p class="fact-footnote">
-                      *Gratificação por serviços prestados na Controladoria (CGM) — Lei nº 15.764/2013, agora reajustada no PL 699/2026 para R$ 1.998,73/mês.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                A GEP é restrita à Controladoria; APPGGs nas áreas finalísticas das secretarias não a recebem.
-              </footer>
-            </article>
-
-            <!-- Item 5 -->
-            <article class="fact-check item-falso" data-index="4" data-number="5" data-label="Diferença na Tabela" data-verdict="FALSO">
-              <header>
-                <div class="fact-number-badge">5</div>
-                <div class="fact-verdict-pill pill-falso">FALSO</div>
-              </header>
-              <blockquote>
-                “A diferença existe apenas no início da carreira.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      A assimetria atravessa a tabela inteira. Na projeção de 2026, a remuneração da outra carreira supera a do APPGG em todas as referências — do início ao topo. <b>Nunca foi assim.</b>
-                    </p>
-                    <div class="fact-extra-context">
-                      <strong>Abismo remuneratório:</strong> Um APPGG leva cerca de <b>15 anos</b> de dedicação para alcançar o valor que o AMCI recebe no 1º dia. No topo (ref. 15), o AMCI alcança R$ 38.752 com GEP contra R$ 24.635 do APPGG — diferença brutal de <b>+57,3%</b> (R$ 14.117/mês). Em 2015, a diferença no topo era de apenas 0,2%.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                A assimetria atravessa as 15 referências — do ingresso ao topo da carreira.
-              </footer>
-            </article>
-
-            <!-- Item 6 -->
-            <article class="fact-check item-falso" data-index="5" data-number="6" data-label="Relação Institucional" data-verdict="FALSO">
-              <header>
-                <div class="fact-number-badge">6</div>
-                <div class="fact-verdict-pill pill-falso">FALSO</div>
-              </header>
-              <blockquote>
-                “APPGG e AMCI são carreiras sem relação institucional.”
-              </blockquote>
-              <div class="fact-verdict">
-                <div class="fact-arrow-line">
-                  <span class="fact-arrow">➜</span>
-                  <div class="fact-arrow-content">
-                    <p class="fact-main-verdict">
-                      As duas fazem parte do mesmo grupo de carreiras (o QPGG), criado por lei em 2015 justamente para unir gestão e controle, com funções distintas e complementares. <b>Diferença de atribuição não significa ausência de vínculo.</b>
-                    </p>
-                    <div class="fact-extra-context">
-                      <strong>Mesmo quadro e paridade federal:</strong> Ambas foram estruturadas pela Lei nº 16.193/2015 sob a mesma natureza técnico-científica e mesmo regime de subsídio. No Governo Federal (EPPGG e Auditor Federal da CGU) e em outros entes, as duas carreiras têm remuneração equivalente.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer>
-                Mesma lei de criação, mesmo regime de subsídio e paridade histórica no plano federal.
-              </footer>
-            </article>
-
-          </div>
-        </div>
-
-        <!-- Yellow Campaign Footer Callout Banner -->
-        <div class="fact-footer-callout">
-          <div class="fact-footer-callout-body">
-            <p>Analisar política pública exige a foto completa — não um recorte conveniente do passado.</p>
-            <span class="fact-footer-tag">#ValorizaAPPGG</span>
-          </div>
-        </div>
-        <p class="fact-sources-caption">
-          Fontes: PL 699/2026; Lei Municipal 16.193/2015; folha municipal ago/2026.
-        </p>
-
-        <div class="history-kpis">
-          <article>
-            <span>APPGG · piso 2022</span><strong>R$ 12.000</strong
-            ><small>+33,3% sobre 2015</small>
-          </article>
-          <article>
-            <span>AMCI · piso 2022</span><strong>R$ 15.300</strong
-            ><small>+10,1% sobre 2015</small>
-          </article>
-          <article class="gap">
-            <span>Diferença que permaneceu</span><strong>R$ 3.300</strong
-            ><small>sem considerar gratificações</small>
-          </article>
-          <article>
-            <span>Tabela integral</span><strong>11,8% × 5,2%</strong
-            ><small>variação da soma das 15 referências</small>
-          </article>
-        </div>
-        <div class="history-table-wrap">
-          <div class="history-table-head">
-            <div>
-              <span>Lei 16.193/2015 × Lei 17.841/2022</span
-              ><b>Crescimento por carreira e por referência</b>
-            </div>
-            <small>Valores nominais do infográfico APOGESP</small>
-          </div>
-          <div class="history-table" id="historyTable"></div>
-        </div>
-        <div class="history-reading">
-          <article>
-            <span>01</span>
-            <div>
-              <b>O aumento foi concentrado no início.</b>
-              <p>
-                A prioridade de 2022 foi recompor o ingresso antes do concurso.
-                O topo quase não avançou.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <b>A diferença permaneceu.</b>
-              <p>
-                O piso subiu, mas continuou abaixo do AMCI. Nas 15 referências,
-                a tabela APPGG cresceu 11,8%.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <b>O compromisso ficou pendente.</b>
-              <p>
-                A assimetria veio do desenho remuneratório de 2015, na gestão
-                Haddad. Segundo a memória negocial da carreira, Rodrigo Goulart
-                assumiu compromisso político de buscar a convergência das
-                tabelas — expectativa que não se concretizou.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="simulator impact-summary" id="impacto">
-        <div class="sim-heading">
-          <p class="eyebrow">Estimativa técnica &nbsp;·&nbsp; Nota Executiva APOGESP (Página 3)</p>
-          <h2><span class="underline-word">Impacto fiscal estimado e vigência.</span></h2>
-          <p>
-            Estimativa conservadora de equiparação da carreira APPGG sobre a folha de servidores em efetivo exercício.
-          </p>
-        </div>
-
-        <div class="impact-total">
+      <!-- PÁGINA 6: DADOS DE EVASÃO -->
+      <div id="dados-evasao" class="page-container-section">
+        <section class="retention-summary" aria-labelledby="retention-title">
+        <div class="retention-top">
           <div>
-            <span>Custo anual estimado (folha direta)</span><strong>R$ 34,6 milhões</strong>
-            <small>R$ 34.576.408,80 na folha direta · Dotação dos 42 concursados já garantida por Ricardo Nunes</small>
+            <p class="eyebrow">Para onde foram os 43 APPGGs exonerados</p>
+            <h2 id="retention-title">
+              Uma carreira <span class="underline-word">quase 25% maior.</span>
+            </h2>
+            <p>
+              Sem as saídas: 218 pessoas.
+              <strong>1 em cada 5 integrantes potenciais</strong> já tomou um
+              novo rumo profissional.
+            </p>
+          </div>
+          <aside>
+            <strong>43</strong><span>saídas da carreira</span
+            ><small>175 ativos + 43 exonerados</small>
+          </aside>
+        </div>
+        <div class="destination-list">
+          <article style="--share: 48.8%">
+            <div><span>Governo Federal</span><b>48,8%</b></div>
+            <i></i>
+            <p>MPO, MGI, EPPGG, Banco Central e BNDES</p>
+          </article>
+          <article style="--share: 18.6%">
+            <div>
+              <span>Controle, Judiciário e Legislativo</span><b>18,6%</b>
+            </div>
+            <i></i>
+            <p>AMCI, TCM-SP, Senado e CNJ</p>
+          </article>
+          <article style="--share: 11.6%">
+            <div>
+              <span>Organismos internacionais e terceiro setor</span
+              ><b>11,6%</b>
+            </div>
+            <i></i>
+            <p>Banco Mundial, BID e Fundação Lemann</p>
+          </article>
+          <article style="--share: 7%">
+            <div><span>Academia de excelência</span><b>7,0%</b></div>
+            <i></i>
+            <p>USP e Insper</p>
+          </article>
+        </div>
+        <div class="retention-reading">
+          <strong
+            >A vocação pública permaneceu. O Município perdeu a
+            capacidade.</strong
+          >
+          <p>
+            Destinos de alta capacidade confirmam o risco de novas perdas.
+            Incluir APPGGs no PL 699/2026 ajuda a reter experiência.
+          </p>
+        </div>
+        <p class="retention-note">
+          Base: 43 exonerados. Categorias exibidas: 86%; demais destinos: 14%.
+          Remuneração é tratada como risco, não causa individual.
+        </p>
+      </section>
+        <section class="mobility-section" id="perdas">
+        <div class="mobility-heading">
+          <div>
+            <p class="eyebrow">Retenção em números</p>
+            <h2>
+              Talento formado.<br /><span class="underline-word"
+                >Capacidade não retida.</span
+              >
+            </h2>
           </div>
           <p>
-            <b>R$ 2,59 milhões</b> de incremento remuneratório mensal<br />
-            <b>× 13⅓ folhas</b> (12 meses + 13º + ⅓ constitucional de férias)
+            A base auditada mostra quem deixou a carreira, está em LIP ou foi
+            nomeado sem registro público de posse — e, quando localizado, o
+            vínculo profissional atual.
           </p>
         </div>
-
-        <div class="impact-assumptions">
-          <article>
-            <span>Escopo da estimativa</span><strong>218 servidores</strong>
-            <p>176 servidores da folha municipal + 42 concursados (dotação orçamentária já garantida por Ricardo Nunes).</p>
+        <div class="mobility-kpis">
+          <article
+            data-mobility-filter="Exonerado"
+            tabindex="0"
+            role="button"
+            aria-label="Mostrar 43 pessoas exoneradas"
+          >
+            <strong>43</strong><span>exonerados</span
+            ><small>deixaram formalmente a carreira</small>
           </article>
-          <article>
-            <span>Alvo remuneratório</span><strong>Equiparação ao AMCI</strong>
-            <p>Mesma tabela de subsídios do PL 699/2026 nas 15 referências.</p>
+          <article
+            data-mobility-filter="LIP"
+            tabindex="0"
+            role="button"
+            aria-label="Mostrar 5 pessoas em LIP"
+          >
+            <strong>5</strong><span>em LIP</span
+            ><small>fora do exercício regular</small>
           </article>
-          <article>
-            <span>Horizonte anual</span><strong>13⅓ folhas</strong>
-            <p>12 meses + 13º subsídio + ⅓ constitucional de férias.</p>
-          </article>
-          <article class="fund">
-            <span>Premissa de vigência</span><strong>Custo zero em 2026</strong>
-            <p>
-              Modulação temporal da vigência financeira para 2027 assegura impacto nulo em 2026.
-            </p>
+          <article
+            data-mobility-filter="Nomeado sem posse"
+            tabindex="0"
+            role="button"
+            aria-label="Mostrar 81 nomeados sem registro de posse"
+          >
+            <strong>81</strong><span>sem registro de posse</span
+            ><small>10 vínculos atuais localizados</small>
           </article>
         </div>
-
-        <!-- DETALHAMENTO DO IMPACTO E DOTAÇÃO DOS 42 APROVADOS (AUTORIZAÇÃO PRÉVIA RICARDO NUNES) -->
-        <div class="approved-breakdown-card" style="margin-top:24px;background:#fdfaf6;border:1px solid #fed7aa;border-left:5px solid #d97706;border-radius:8px;padding:22px 26px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-              <span style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:#9a3412;background:#ffedd5;padding:4px 10px;border-radius:4px;text-transform:uppercase;">
-                Detalhamento Orçamentário
-              </span>
-              <strong style="color:var(--navy);font-size:1.1rem;font-family:var(--font-title, Newsreader), Georgia, serif;">
-                Impacto dos 42 novos aprovados já previsto anteriormente
-              </strong>
-            </div>
-            <span style="font-size:0.76rem;font-weight:700;color:#9a3412;background:#fff;padding:4px 10px;border:1px solid #fed7aa;border-radius:4px;">
-              Autorização prévia: Prefeito Ricardo Nunes
-            </span>
+        <div class="mobility-tools">
+          <div
+            class="mobility-filters"
+            role="group"
+            aria-label="Filtrar pessoas por situação"
+          >
+            <button
+              type="button"
+              data-mobility-filter="Exonerado"
+              aria-pressed="true"
+            >
+              Exonerados</button
+            ><button
+              type="button"
+              data-mobility-filter="LIP"
+              aria-pressed="false"
+            >
+              Em LIP</button
+            ><button
+              type="button"
+              data-mobility-filter="Nomeado sem posse"
+              aria-pressed="false"
+            >
+              Não assumiram</button
+            ><button
+              type="button"
+              data-mobility-filter="Todos"
+              aria-pressed="false"
+            >
+              Todos
+            </button>
           </div>
-          <p style="margin:0 0 16px;font-size:0.88rem;color:#334155;line-height:1.6;">
-            O impacto orçamentário referente à nomeação dos <strong>42 novos APPGGs aprovados em concurso público</strong> não representa despesa surpresa ou não provisionada. A dotação orçamentária e a autorização formal para o chamamento desses profissionais <strong>já foram concedidas em momento anterior pelo Prefeito Ricardo Nunes</strong>, estando o seu custo básico de ingresso na folha municipal plenamente programado e absorvido pela Prefeitura.
-          </p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;padding-top:14px;border-top:1px solid #fed7aa;">
-            <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:6px;padding:16px 18px;">
-              <b style="display:block;font-size:0.75rem;color:#9a3412;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">1. Admissão já programada</b>
-              <p style="margin:0;font-size:0.83rem;color:#475569;line-height:1.55;">
-                O desembolso relativo ao ingresso desses 42 novos servidores já contava com previsão orçamentária expressa autorizada pela Administração Municipal.
-              </p>
-            </div>
-            <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:6px;padding:16px 18px;">
-              <b style="display:block;font-size:0.75rem;color:#9a3412;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">2. Retorno imediato em eficiência</b>
-              <p style="margin:0;font-size:0.83rem;color:#475569;line-height:1.55;">
-                A alocação dos novos gestores reforça imediatamente secretarias estratégicas (SEGES, Finanças, Saúde, Educação, SGM), gerando ganhos de eficiência que superam o investimento na carreira.
-              </p>
-            </div>
-          </div>
+          <label class="mobility-search"
+            ><span>Buscar primeiro nome</span
+            ><input
+              id="mobilitySearch"
+              type="search"
+              autocomplete="off"
+              placeholder="Ex.: Ana"
+          /></label>
         </div>
-
-        <!-- TABELA OFICIAL DE CENÁRIOS TEMPORAIS DE VIGÊNCIA (PÁGINA 3) -->
-        <div class="scenarios-container">
-          <div class="scenarios-header">
-            <div>
-              <span class="eyebrow" style="color:#b45309;font-size:0.72rem;font-weight:700;display:block;margin-bottom:4px;">MODELAGEM DA NOTA EXECUTIVA</span>
-              <h3>Cenários Temporais de Vigência</h3>
-            </div>
-            <span><b>Base:</b> 176 servidores da folha + 42 ingressantes = 218 pessoas</span>
-          </div>
-          <div class="scenarios-table-wrap">
-            <table class="scenarios-table">
-              <thead>
-                <tr>
-                  <th>Início da Vigência</th>
-                  <th style="text-align:center;">Meses até Dez/28</th>
-                  <th style="text-align:right;">Impacto Anual</th>
-                  <th style="text-align:right;">Acumulado até Dez/28</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Outubro/2026</strong></td>
-                  <td class="months">27</td>
-                  <td class="num">R$ 34.576.408,80</td>
-                  <td class="num">R$ 77.796.919,80</td>
-                </tr>
-                <tr class="featured-scenario">
-                  <td><strong>Janeiro/2027</strong> <span class="scenario-badge">Recomendado</span></td>
-                  <td class="months">24</td>
-                  <td class="num">R$ 34.576.408,80</td>
-                  <td class="num">R$ 69.152.817,60</td>
-                </tr>
-                <tr>
-                  <td><strong>Maio/2027</strong> <small style="color:#64748b;">(Data-base municipal)</small></td>
-                  <td class="months">20</td>
-                  <td class="num">R$ 34.576.408,80</td>
-                  <td class="num">R$ 57.627.348,00</td>
-                </tr>
-                <tr>
-                  <td><strong>Janeiro/2028</strong></td>
-                  <td class="months">12</td>
-                  <td class="num">R$ 34.576.408,80</td>
-                  <td class="num">R$ 34.576.408,80</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="scenarios-footer-banner">
-            <div>
-              <p>Valorizar os APPGGs é fortalecer São Paulo.</p>
-              <span style="display:block;margin-top:4px;font-size:0.75rem;color:#78350f;">A dotação orçamentária dos 42 novos concursados já foi previamente autorizada e garantida pelo Prefeito Ricardo Nunes.</span>
-            </div>
-            <span style="font-weight:800;font-size:0.85rem;color:#713f12;">#ValorizaAPPGG</span>
-          </div>
+        <div class="mobility-result-head">
+          <strong id="mobilityTitle">Pessoas exoneradas</strong
+          ><span id="mobilityCount" aria-live="polite"></span>
         </div>
-
-        <div class="impact-bullets" style="margin-top:20px;padding:18px;background:#f8fafc;border-left:4px solid var(--navy);font-size:0.82rem;color:var(--navy);line-height:1.6">
-          <b style="font-size:0.88rem;">Premissas do simulador (Nota Executiva APOGESP):</b>
-          <ul style="margin:8px 0 0 18px;list-style:disc">
-            <li><strong>Impacto direto:</strong> Incremento mensal de R$ 2,59 milhões; anualização por 12 meses + 13º + ⅓ constitucional de férias (13⅓ folhas); sem encargos patronais adicionais (<strong>R$ 34.576.408,80 anuais</strong>).</li>
-            <li><strong>Dotação assegurada dos 42 ingressantes:</strong> A dotação orçamentária para o chamamento dos 42 novos concursados já foi previamente autorizada e garantida pela gestão do Prefeito Ricardo Nunes. O custo anual da valorização é amplamente compensado pela economia e receitas geradas pelas entregas dos gestores (ônibus elétricos, compras públicas e modernização do IPTU).</li>
-            <li><strong>Acumulados:</strong> Os acumulados comparam apenas datas de vigência da correção integral até dezembro de 2028, oferecendo previsibilidade total para a LRF e a LDO municipal.</li>
-            <li><strong>Fontes oficiais:</strong> PL 699/2026; Lei Municipal 16.193/2015; folha de pagamento municipal de agosto/2026; PAI janeiro/2026; APOGESP. Valores nominais de 2026.</li>
-          </ul>
-        </div>
+        <div class="mobility-grid" id="mobilityCards"></div>
+        <p class="mobility-note">
+          <b>Critério:</b> identificação reduzida ao primeiro nome. Os blocos
+          classificam a natureza do empregador a partir do vínculo informado.
+          “Nomeado sem posse” indica ausência de registro público de posse até a
+          data-base, não necessariamente desistência formal. Base auditada em
+          20/09/2026; situações funcionais podem mudar.
+        </p>
       </section>
-      <p class="method">
-        Fontes: Folha de pagamento da Prefeitura de São Paulo, ago/2026; tabela APPGG mai/2026; <a href="https://www.saopaulo.sp.leg.br/iah/fulltext/projeto/PL0699-2026.pdf" target="_blank" rel="noopener">PL 699/2026 ↗</a>; Lei Municipal 16.193/2015; PAI jan/2026; APOGESP.
-      </p>
-      <section class="support-section" id="apoios" hidden>
+        <!-- Card de Aprofundamento para a Página 7 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Aprofundamento · Página 7</span>
+            <h4>Quem apoia os APPGGs</h4>
+            <p>Confira as manifestações formais de 9 secretarias e órgãos no processo SEI e o posicionamento público de lideranças.</p>
+          </div>
+          <a href="#quem-apoia" class="btn-deep-dive">Avançar para: Quem apoia os APPGGs →</a>
+        </div>
+      </div>
+
+
+      <!-- PÁGINA 7: QUEM APOIA OS APPGGS -->
+      <div id="quem-apoia" class="page-container-section">
+        <section class="support-section" id="apoios">
         <div class="support-heading">
           <div>
             <p class="eyebrow">Manifestações institucionais no SEI</p>
@@ -1649,166 +1939,7 @@
           apenas as iniciais.
         </p>
       </section>
-      <section class="mobility-section" id="perdas" hidden>
-        <div class="mobility-heading">
-          <div>
-            <p class="eyebrow">Retenção em números</p>
-            <h2>
-              Talento formado.<br /><span class="underline-word"
-                >Capacidade não retida.</span
-              >
-            </h2>
-          </div>
-          <p>
-            A base auditada mostra quem deixou a carreira, está em LIP ou foi
-            nomeado sem registro público de posse — e, quando localizado, o
-            vínculo profissional atual.
-          </p>
-        </div>
-        <div class="mobility-kpis">
-          <article
-            data-mobility-filter="Exonerado"
-            tabindex="0"
-            role="button"
-            aria-label="Mostrar 43 pessoas exoneradas"
-          >
-            <strong>43</strong><span>exonerados</span
-            ><small>deixaram formalmente a carreira</small>
-          </article>
-          <article
-            data-mobility-filter="LIP"
-            tabindex="0"
-            role="button"
-            aria-label="Mostrar 5 pessoas em LIP"
-          >
-            <strong>5</strong><span>em LIP</span
-            ><small>fora do exercício regular</small>
-          </article>
-          <article
-            data-mobility-filter="Nomeado sem posse"
-            tabindex="0"
-            role="button"
-            aria-label="Mostrar 81 nomeados sem registro de posse"
-          >
-            <strong>81</strong><span>sem registro de posse</span
-            ><small>10 vínculos atuais localizados</small>
-          </article>
-        </div>
-        <div class="mobility-tools">
-          <div
-            class="mobility-filters"
-            role="group"
-            aria-label="Filtrar pessoas por situação"
-          >
-            <button
-              type="button"
-              data-mobility-filter="Exonerado"
-              aria-pressed="true"
-            >
-              Exonerados</button
-            ><button
-              type="button"
-              data-mobility-filter="LIP"
-              aria-pressed="false"
-            >
-              Em LIP</button
-            ><button
-              type="button"
-              data-mobility-filter="Nomeado sem posse"
-              aria-pressed="false"
-            >
-              Não assumiram</button
-            ><button
-              type="button"
-              data-mobility-filter="Todos"
-              aria-pressed="false"
-            >
-              Todos
-            </button>
-          </div>
-          <label class="mobility-search"
-            ><span>Buscar primeiro nome</span
-            ><input
-              id="mobilitySearch"
-              type="search"
-              autocomplete="off"
-              placeholder="Ex.: Ana"
-          /></label>
-        </div>
-        <div class="mobility-result-head">
-          <strong id="mobilityTitle">Pessoas exoneradas</strong
-          ><span id="mobilityCount" aria-live="polite"></span>
-        </div>
-        <div class="mobility-grid" id="mobilityCards"></div>
-        <p class="mobility-note">
-          <b>Critério:</b> identificação reduzida ao primeiro nome. Os blocos
-          classificam a natureza do empregador a partir do vínculo informado.
-          “Nomeado sem posse” indica ausência de registro público de posse até a
-          data-base, não necessariamente desistência formal. Base auditada em
-          20/09/2026; situações funcionais podem mudar.
-        </p>
-      </section>
-      <section class="retention-summary" aria-labelledby="retention-title">
-        <div class="retention-top">
-          <div>
-            <p class="eyebrow">Para onde foram os 43 APPGGs exonerados</p>
-            <h2 id="retention-title">
-              Uma carreira <span class="underline-word">quase 25% maior.</span>
-            </h2>
-            <p>
-              Sem as saídas: 218 pessoas.
-              <strong>1 em cada 5 integrantes potenciais</strong> já tomou um
-              novo rumo profissional.
-            </p>
-          </div>
-          <aside>
-            <strong>43</strong><span>saídas da carreira</span
-            ><small>175 ativos + 43 exonerados</small>
-          </aside>
-        </div>
-        <div class="destination-list">
-          <article style="--share: 48.8%">
-            <div><span>Governo Federal</span><b>48,8%</b></div>
-            <i></i>
-            <p>MPO, MGI, EPPGG, Banco Central e BNDES</p>
-          </article>
-          <article style="--share: 18.6%">
-            <div>
-              <span>Controle, Judiciário e Legislativo</span><b>18,6%</b>
-            </div>
-            <i></i>
-            <p>AMCI, TCM-SP, Senado e CNJ</p>
-          </article>
-          <article style="--share: 11.6%">
-            <div>
-              <span>Organismos internacionais e terceiro setor</span
-              ><b>11,6%</b>
-            </div>
-            <i></i>
-            <p>Banco Mundial, BID e Fundação Lemann</p>
-          </article>
-          <article style="--share: 7%">
-            <div><span>Academia de excelência</span><b>7,0%</b></div>
-            <i></i>
-            <p>USP e Insper</p>
-          </article>
-        </div>
-        <div class="retention-reading">
-          <strong
-            >A vocação pública permaneceu. O Município perdeu a
-            capacidade.</strong
-          >
-          <p>
-            Destinos de alta capacidade confirmam o risco de novas perdas.
-            Incluir APPGGs no PL 699/2026 ajuda a reter experiência.
-          </p>
-        </div>
-        <p class="retention-note">
-          Base: 43 exonerados. Categorias exibidas: 86%; demais destinos: 14%.
-          Remuneração é tratada como risco, não causa individual.
-        </p>
-      </section>
-      <section class="voices-section" aria-labelledby="voices-title">
+        <section class="voices-section" aria-labelledby="voices-title">
         <div class="voices-heading">
           <div>
             <p class="eyebrow">Apoios à valorização</p>
@@ -1843,7 +1974,19 @@
           <div><button id="voicesPrev" type="button" aria-label="Apoio anterior">←</button><button id="voicesNext" type="button" aria-label="Próximo apoio">→</button></div>
         </div>
       </section>
-      <section class="legal-precedent" aria-labelledby="legal-title">
+        <!-- Card de Aprofundamento para a Página 8 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Aprofundamento · Página 8</span>
+            <h4>Fundamento Jurídico</h4>
+            <p>Entenda a jurisprudência do Supremo Tribunal Federal (STF), a Súmula Vinculante 37 e a constitucionalidade da isonomia remuneratória.</p>
+          </div>
+          <a href="#fundamento-juridico" class="btn-deep-dive">Avançar para: Fundamento Jurídico →</a>
+        </div>
+      </div>
+
+      <!-- PÁGINA 8: FUNDAMENTO JURÍDICO -->
+      <section class="legal-precedent" id="fundamento-juridico" aria-labelledby="legal-title">
         <div class="legal-kicker">
           <span>Fundamento jurídico</span><b>Jurisprudência do STF · ADI 525-MC</b>
         </div>
@@ -1894,7 +2037,8 @@
           >
         </div>
       </section>
-      <section class="comments-section" id="comentarios">
+      
+<section class="comments-section" id="comentarios">
         <div class="comments-heading">
           <div>
             <p class="eyebrow">Participação pública</p>
@@ -1963,6 +2107,7 @@
     <script src="/mobility.js"></script>
     <script src="/comments.js"></script>
     <script src="/evolution-chart.js"></script>
+    <script src="/nav.js"></script>
     <script src="/print-export.js"></script>
   </body>
 </html>

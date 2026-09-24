@@ -119,9 +119,10 @@
   .fact-verdict p{font-size:7.5pt!important;line-height:1.42!important}
   .fact-check footer{padding:3mm!important}
   .history-kpis{grid-template-columns:repeat(3,1fr)!important;gap:3mm!important}
-  .history-table-wrap{break-before:page;break-inside:avoid-page}
-  .history-table{overflow:visible!important}
-  .history-table>div{min-width:0!important;font-size:6.2pt!important}
+  .history-infographic-card{break-before:page;break-inside:avoid-page;padding:4mm!important;background:#ebdcc9!important}
+  .history-table-container,.history-table-scroll{overflow:visible!important}
+  .photo-styled-table{width:100%!important;min-width:0!important;font-size:6.2pt!important}
+  .photo-styled-table th,.photo-styled-table td{padding:1.4mm 1mm!important}
   .history-reading{grid-template-columns:repeat(3,1fr)!important;gap:3mm!important}
 
   .impact-summary{background:#eef2f4!important}
