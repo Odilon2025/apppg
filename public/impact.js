@@ -53,6 +53,15 @@ function renderFront(){
 renderFront();
 $('shareTop').addEventListener('click',async()=>{
   const data={title:document.title,text:'APPGG × AMCI: comparação salarial direta e impacto orçamentário.',url:location.href};
-  if(navigator.share){ try{await navigator.share(data);}catch(_){} }
-  else { await navigator.clipboard.writeText(location.href); const button=$('shareTop'); const old=button.textContent; button.textContent='Link copiado'; setTimeout(()=>button.textContent=old,1400); }
+  if(navigator.share){
+    try { await navigator.share(data); } catch(_) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      const button=$('shareTop');
+      const old=button.textContent;
+      button.textContent='✓ Link copiado!';
+      setTimeout(()=>button.textContent=old, 2200);
+    } catch(_) {}
+  }
 });

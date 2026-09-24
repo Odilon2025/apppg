@@ -258,64 +258,87 @@
   display: block;
 }
 
-/* Cards de Aprofundamento no Final de Cada Seção */
+/* Cards de Aprofundamento no Final de Cada Seção (UX Leve e Fluido) */
 .section-deep-dive-card {
-  margin: 34px 0 10px;
-  padding: 22px 26px;
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  margin: 28px 0 10px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border: 1px solid #cbd5e1;
-  border-left: 5px solid #0f2942;
+  border-left: 4px solid #0f2942;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .deep-dive-content span {
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #d97706;
+  letter-spacing: 0.06em;
+  color: #b45309;
   display: block;
 }
 
 .deep-dive-content h4 {
-  margin: 4px 0 6px;
-  font-size: 1.18rem;
+  margin: 3px 0 4px;
+  font-size: 1.12rem;
   color: #0f2942;
   font-weight: 700;
 }
 
 .deep-dive-content p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: #475569;
-  max-width: 780px;
+  max-width: 760px;
   line-height: 1.45;
 }
 
 .btn-deep-dive {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 6px;
   background: #0f2942;
   color: #ffffff !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 9999px;
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border-radius: 6px;
   white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(15, 41, 66, 0.15);
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .btn-deep-dive:hover {
-  background: #1e3a5f;
-  box-shadow: 0 4px 12px rgba(15, 41, 66, 0.2);
-  transform: translateX(3px);
+  background: #173f5e;
+  box-shadow: 0 4px 10px rgba(15, 41, 66, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Helper tips leves para instruções de usabilidade */
+.ux-helper-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.ux-helper-tip span.tip-icon {
+  font-size: 0.95rem;
+}
+
+.ux-helper-tip span.tip-text {
+  line-height: 1.4;
 }
 
 @media(max-width: 900px) {

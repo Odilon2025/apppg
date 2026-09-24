@@ -7,7 +7,7 @@ const PEOPLE=[{"name":"Andreza","year":"2015","status":"Exonerado","checked":"11
   const filters=[...document.querySelectorAll('[data-mobility-filter]')];
   if(!grid||!count||!title||!search)return;
 
-  const titles={Exonerado:'Pessoas exoneradas',LIP:'Pessoas em LIP','Nomeado sem posse':'Nomeados sem registro de posse',Todos:'Todos os registros'};
+  const titles={Exonerado:'Servidores exonerados',LIP:'Servidores em licença (LIP)','Nomeado sem posse':'Nomeações sem posse registrada',Todos:'Todos os registros'};
   const groupOrder=['Administração federal','Controle, Justiça e Legislativo','Governos estaduais e municipais','Academia e pesquisa','Organismos internacionais','Terceiro setor','Setor privado e atuação independente','Sem vínculo confirmado'];
   const normalize=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleUpperCase('pt-BR');
   const escapeHtml=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
@@ -25,8 +25,8 @@ const PEOPLE=[{"name":"Andreza","year":"2015","status":"Exonerado","checked":"11
   }
 
   function personCard(person){
-    const timing=person.status==='Exonerado'?'':`<p class="person-date">${person.status==='LIP'?'Desde':'Nomeação'} ${escapeHtml(displayDate(person.date))}</p>`;
-    const current=person.current==='Sem registro público de posse até a data'?'Sem posse registrada':person.current==='Sem informação pública recente de vínculo ativo'?'Vínculo atual não localizado':person.current;
+    const timing=person.status==='Exonerado'?'':`<p class="person-date">${person.status==='LIP'?'Licença desde':'Nomeação em'} ${escapeHtml(displayDate(person.date))}</p>`;
+    const current=person.current==='Sem registro público de posse até a data'?'Sem posse registrada até o momento':person.current==='Sem informação pública recente de vínculo ativo'?'Vínculo atual não localizado em fontes públicas':person.current;
     return `<article class="person-card status-${slug(person.status)}" aria-label="${escapeHtml(person.status)}"><h3>${escapeHtml(person.name)}</h3>${timing}<div class="person-place"><span>${escapeHtml(current)}</span></div></article>`;
   }
 
@@ -36,9 +36,9 @@ const PEOPLE=[{"name":"Andreza","year":"2015","status":"Exonerado","checked":"11
       .filter(person=>(active==='Todos'||person.status===active)&&(!query||normalize(person.name).includes(query)))
       .sort((a,b)=>groupOrder.indexOf(a.group)-groupOrder.indexOf(b.group)||a.name.localeCompare(b.name,'pt-BR'));
     title.textContent=titles[active];
-    count.textContent=`${rows.length} ${rows.length===1?'pessoa':'pessoas'} · agrupadas por empregador`;
+    count.textContent=`${rows.length} ${rows.length===1?'servidor registrado':'servidores registrados'} · agrupados por área de atuação`;
     if(!rows.length){
-      grid.innerHTML='<p class="mobility-empty">Nenhum primeiro nome encontrado neste recorte.</p>';
+      grid.innerHTML='<p class="mobility-empty">Nenhum servidor encontrado com esse termo. Tente buscar por outro primeiro nome ou limpe a busca.</p>';
       return;
     }
     const grouped=new Map();

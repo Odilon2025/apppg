@@ -63,24 +63,25 @@
         <button
           id="exportPdf"
           type="button"
-          aria-label="Exportar esta página em PDF"
+          aria-label="Baixar relatório completo em PDF"
+          title="Baixar relatório completo em PDF"
         >
-          <span>Exportar PDF</span>
+          <span>Baixar PDF</span>
         </button>
-        <button id="shareTop" type="button">Compartilhar</button>
+        <button id="shareTop" type="button" aria-label="Copiar link da página" title="Copiar link da página">Compartilhar</button>
       </div>
     </header>
 
     <!-- Barra de Navegação Rápida com as 8 Seções -->
-    <nav class="section-nav-strip" aria-label="Navegação por seções e argumentos da campanha">
+    <nav class="section-nav-strip" aria-label="Navegação rápida por seções da campanha">
       <a href="#comparacao-salarial" class="nav-section-btn active"><span class="nav-num">1</span> Comparação salarial</a>
       <a href="#por-que-equiparar" class="nav-section-btn"><span class="nav-num">2</span> Por que equiparar?</a>
-      <a href="#informacoes-enganosas" class="nav-section-btn"><span class="nav-num">3</span> Informações enganosas</a>
+      <a href="#informacoes-enganosas" class="nav-section-btn"><span class="nav-num">3</span> Fatos e mitos</a>
       <a href="#impacto-fiscal" class="nav-section-btn"><span class="nav-num">4</span> Impacto fiscal</a>
-      <a href="#entregas-appggs" class="nav-section-btn"><span class="nav-num">5</span> Entregas dos APPGGs</a>
+      <a href="#entregas-appggs" class="nav-section-btn"><span class="nav-num">5</span> Projetos e entregas</a>
       <a href="#dados-evasao" class="nav-section-btn"><span class="nav-num">6</span> Dados de evasão</a>
       <a href="#quem-apoia" class="nav-section-btn"><span class="nav-num">7</span> Quem apoia</a>
-      <a href="#fundamento-juridico" class="nav-section-btn"><span class="nav-num">8</span> Fundamento Jurídico</a>
+      <a href="#fundamento-juridico" class="nav-section-btn"><span class="nav-num">8</span> Base jurídica</a>
     </nav>
 
     <main id="inicio">
@@ -108,20 +109,20 @@
             <!-- Bloco Integrado do AMCI (Básico + GEP Contíguo) -->
             <div class="amci-grouped-card">
               <div class="amci-grouped-header">
-                <span class="amci-badge">AMCI · Ingressante (1º Dia)</span>
+                <span class="amci-badge">AMCI · No 1º dia de exercício</span>
                 <span class="amci-total-highlight">Total Inicial: <strong>R$ 23.526</strong></span>
               </div>
               <div class="amci-contiguous-grid">
                 <div class="subsidio-part">
-                  <span>Subsídio Básico (PL 699)</span>
+                  <span>Subsídio inicial proposto</span>
                   <strong>R$ 21.527</strong>
-                  <small>Piso inicial bruto fixado no PL</small>
+                  <small>Piso fixado no PL 699/2026</small>
                 </div>
                 <div class="operator-plus">+</div>
                 <div class="gep-part">
                   <span>Gratificação CGM (GEP)</span>
                   <strong>R$ 1.998</strong>
-                  <small>Reajustada no PL para R$ 1.998,73</small>
+                  <small>Prevista no PL para quem atua no controle</small>
                 </div>
               </div>
             </div>
@@ -135,19 +136,19 @@
             <!-- Bloco do APPGG após 15 anos -->
             <div class="appgg-grouped-card">
               <div class="appgg-grouped-header">
-                <span class="appgg-badge">APPGG · Após 15 Anos</span>
+                <span class="appgg-badge">APPGG · Após 15 anos de dedicação</span>
                 <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Nível II · Ref. 11</span>
               </div>
               <div class="appgg-body">
-                <span>11ª Linha da Tabela APPGG</span>
+                <span>11ª Linha da Tabela (sem GEP)</span>
                 <strong>R$ 20.738</strong>
-                <small>Exige cerca de <b>15 ANOS</b> de carreira para alcançar (sem gratificação de controle).</small>
+                <small>Tempo de dedicação exigido para alcançar o valor sem gratificação de controle.</small>
               </div>
             </div>
           </div>
 
           <p>
-            <b>Distorção irrazoável entre carreiras:</b> Com a aplicação do PL 699, o AMCI ingressante recebe, somando dissídio e GEP, apenas <b>R$ 1.107 menos</b> que um APPGG no topo da carreira (referência 15: R$ 24.635). O encontro das remunerações que ocorria nos últimos níveis vira coisa do passado com a tabela proposta: ela concede vantagem remuneratória expressiva aos AMCIs em todas as 15 referências. Em 2015, a diferença no topo era de apenas 0,2%.
+            <b>Uma diferença expressiva:</b> Com a aplicação do PL 699, quem ingressa na carreira de AMCI passa a receber praticamente o mesmo valor de um APPGG no topo da carreira — apenas <b>R$ 1.107 a menos</b> que o teto (referência 15: R$ 24.635 vs R$ 23.526). Em 2015, as duas carreiras caminhavam juntas, com diferença de apenas 0,2% no teto remuneratório.
           </p>
         </div>
         <div class="table-title">
@@ -164,12 +165,16 @@
             <small>Valores nominais brutos fixados para as 15 referências</small>
           </div>
         </div>
+        <div class="ux-helper-tip">
+          <span class="tip-icon">💡</span>
+          <span class="tip-text"><b>Dica de navegação:</b> compare lado a lado os vencimentos atuais e os valores propostos no PL 699/2026. Em telas menores, deslize a tabela horizontalmente.</span>
+        </div>
         <div class="front-table" id="frontTable"></div>
         <div class="table-notes">
-          <p><b>APPGG (Atual):</b> tabela remuneratória vigente (15 referências em 3 níveis: I, II e III).</p>
+          <p><b>APPGG (Atual):</b> tabela remuneratória vigente dos gestores em 15 referências (Níveis I, II e III).</p>
           <p><b>AMCI (Atual):</b> subsídio vigente dos Auditores com reajustes gerais aplicados à Lei 17.841/2022.</p>
-          <p><b>AMCI (PL 699/2026):</b> subsídio proposto pelo Projeto de Lei nº 699/2026 encaminhado à Câmara.</p>
-          <p><b>Tempo de carreira:</b> Ref. 1 são 3 anos (estágio probatório); depois, progressão regular a cada 18 meses (1,5 ano).</p>
+          <p><b>AMCI (PL 699/2026):</b> subsídio proposto pelo Projeto de Lei nº 699/2026 em tramitação na Câmara.</p>
+          <p><b>Evolução na carreira:</b> 3 anos no estágio probatório inicial; após isso, progressão regular a cada 18 meses.</p>
         </div>
       </section>
 
@@ -198,6 +203,11 @@
               <span class="legend-item"><span class="legend-dashed color-ref-amci"></span> Piso AMCI 1º dia (R$ 21.527,50)</span>
               <span class="legend-item"><span class="legend-dashed color-ref-gep"></span> Piso AMCI + GEP (R$ 23.525,50)</span>
             </div>
+          </div>
+
+          <div class="ux-helper-tip" style="margin-top:14px;margin-bottom:6px;">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">Passe o cursor ou toque nos pontos das curvas para comparar a progressão das duas carreiras ao longo dos anos.</span>
           </div>
 
           <!-- Interactive SVG Curve Chart -->
@@ -243,14 +253,14 @@
               <li><strong>Ingressante AMCI ganha praticamente o teto do APPGG:</strong> O AMCI ingressante recebe, somando dissídio e GEP (R$ 23.526,23), apenas <strong>R$ 1.107 a menos</strong> que um APPGG no topo da carreira (R$ 24.634,90).</li>
             </ul>
           </div>
-          <!-- Card de Aprofundamento para a Página 2 -->
+          <!-- Card de Próximo Passo para a Seção 2 -->
           <div class="section-deep-dive-card">
             <div class="deep-dive-content">
-              <span>Aprofundamento · Página 2</span>
+              <span>Etapa 2 de 8 · Próximo tema</span>
               <h4>Por que equiparar as duas carreiras?</h4>
-              <p>Entenda a simetria institucional do QPGG, o histórico de 10 anos de paridade e as razões estruturais da equiparação.</p>
+              <p>A simetria de 10 anos no QPGG e por que a paridade fortalece a gestão e o controle na cidade.</p>
             </div>
-            <a href="#por-que-equiparar" class="btn-deep-dive">Avançar para: Por que equiparar? →</a>
+            <a href="#por-que-equiparar" class="btn-deep-dive">Ver motivos para equiparar →</a>
           </div>
         </div>
       </section>
@@ -266,7 +276,7 @@
               >
             </h2>
           </div>
-          <p>Valorizar o controle sem desvalorizar a gestão pública eficiente.</p>
+          <p>Valorizar a gestão pública e o controle de forma equilibrada e responsável.</p>
         </div>
 
         <div class="case-grid">
@@ -356,7 +366,7 @@
         <article class="commitment-card">
           <span>Origem e compromisso</span>
           <div>
-            <h2 id="commitment-title">Um compromisso ainda pendente.</h2>
+            <h2 id="commitment-title">Um compromisso que aguarda cumprimento.</h2>
             <p>A assimetria salarial decorre do desenho original de 2015, mas desde 2022 há o compromisso de buscar a convergência das duas carreiras irmãs do QPGG.</p>
             <p>Como destacou Rodrigo Goulart em manifestação oficial de apoio à carreira: <strong>“Manifestamos apoio à inclusão da carreira de APPGG nas medidas de revalorização salarial... A valorização desses profissionais representa medida relevante para o fortalecimento das capacidades institucionais da administração municipal.”</strong></p>
             <p>Segundo a memória negocial da carreira no Legislativo e na Prefeitura, Rodrigo Goulart assumiu o compromisso político de assegurar a isonomia e a convergência das tabelas do QPGG — compromisso que agora aguarda efetivação no PL 699/2026.</p>
@@ -364,15 +374,15 @@
           </div>
         </article>
       
-          <!-- Card de Aprofundamento para a Página 3 -->
-          <div class="section-deep-dive-card">
-            <div class="deep-dive-content">
-              <span>Aprofundamento · Página 3</span>
-              <h4>Informações enganosas e Fact Check</h4>
-              <p>Veja a checagem rigorosa dos argumentos distorcidos sobre reajustes passados e a reconstituição da tabela de 2022.</p>
-            </div>
-            <a href="#informacoes-enganosas" class="btn-deep-dive">Avançar para: Informações enganosas →</a>
+        <!-- Card de Próximo Passo para a Seção 3 -->
+        <div class="section-deep-dive-card">
+          <div class="deep-dive-content">
+            <span>Etapa 3 de 8 · Próximo tema</span>
+            <h4>Fatos checados e esclarecimentos</h4>
+            <p>Confira a análise criteriosa dos dados de reajustes passados e a evolução histórica das tabelas remuneratórias.</p>
           </div>
+          <a href="#informacoes-enganosas" class="btn-deep-dive">Conferir fatos checados →</a>
+        </div>
       </section>
 <!-- PÁGINA 3: INFORMAÇÕES ENGANOSAS -->
       <section class="history" id="informacoes-enganosas">
@@ -388,8 +398,8 @@
         <!-- Yellow Hero Headline Card -->
         <div class="fact-hero-card">
           <div class="fact-hero-body">
-            <h2>Um dado isolado pode ser verdadeiro — e ainda assim, enganoso.</h2>
-            <p>O que é fato sobre as propostas no PL, o que é distorção</p>
+            <h2>Um dado isolado pode ser verdadeiro — e ainda assim, incompleto.</h2>
+            <p>O que é fato sobre as propostas no PL 699 e o que precisa de contexto histórico</p>
           </div>
         </div>
 
@@ -667,14 +677,14 @@
           </article>
         </div>
       
-        <!-- Card de Aprofundamento para a Página 4 -->
+        <!-- Card de Próximo Passo para a Seção 4 -->
         <div class="section-deep-dive-card">
           <div class="deep-dive-content">
-            <span>Aprofundamento · Página 4</span>
-            <h4>Impacto fiscal estimado e vigência</h4>
-            <p>Conheça a estimativa técnica de R$ 34,6M/ano, a previsão dos 42 novos ingressantes já programados e a ausência de choque orçamentário.</p>
+            <span>Etapa 4 de 8 · Próximo tema</span>
+            <h4>Qual é o impacto fiscal real?</h4>
+            <p>Estimativa técnica transparente de R$ 34,6M/ano, com dotação para novos ingressantes já garantida pela Prefeitura.</p>
           </div>
-          <a href="#impacto-fiscal" class="btn-deep-dive">Avançar para: Impacto fiscal →</a>
+          <a href="#impacto-fiscal" class="btn-deep-dive">Explorar o impacto fiscal →</a>
         </div>
       </section>
 
@@ -682,16 +692,16 @@
       <section class="simulator impact-summary" id="impacto-fiscal">
         <div class="sim-heading">
           <p class="eyebrow">Estimativa técnica &nbsp;·&nbsp; Nota Executiva APOGESP (Página 3)</p>
-          <h2><span class="underline-word">Impacto fiscal estimado e vigência.</span></h2>
+          <h2><span class="underline-word">Impacto fiscal estimado e vigência planejada.</span></h2>
           <p>
-            Estimativa conservadora de equiparação da carreira APPGG sobre a folha de servidores em efetivo exercício.
+            Estimativa transparente da folha em efetivo exercício, com total previsibilidade para a Lei de Responsabilidade Fiscal.
           </p>
         </div>
 
         <div class="impact-total">
           <div>
             <span>Custo anual estimado (folha direta)</span><strong>R$ 34,6 milhões</strong>
-            <small>R$ 34.576.408,80 na folha direta · Dotação dos 42 concursados já garantida por Ricardo Nunes</small>
+            <small>R$ 34.576.408,80 na folha direta · Dotação dos 42 concursados já garantida pela Prefeitura</small>
           </div>
           <p>
             <b>R$ 2,59 milhões</b> de incremento remuneratório mensal<br />
@@ -820,14 +830,14 @@
           </ul>
         </div>
       
-        <!-- Card de Aprofundamento para a Página 5 -->
+        <!-- Card de Próximo Passo para a Seção 5 -->
         <div class="section-deep-dive-card">
           <div class="deep-dive-content">
-            <span>Aprofundamento · Página 5</span>
-            <h4>Entregas dos APPGGs e Projetos em Risco</h4>
-            <p>Superado o dado fiscal, conheça o valor das entregas da carreira para São Paulo e os projetos prioritários que dependem desses profissionais.</p>
+            <span>Etapa 5 de 8 · Próximo tema</span>
+            <h4>O valor das entregas para São Paulo</h4>
+            <p>Superada a análise fiscal, conheça os projetos estratégicos da capital liderados e executados por gestores.</p>
           </div>
-          <a href="#entregas-appggs" class="btn-deep-dive">Avançar para: Entregas dos APPGGs →</a>
+          <a href="#entregas-appggs" class="btn-deep-dive">Conhecer projetos e entregas →</a>
         </div>
 </section>
       <p class="method">
@@ -858,24 +868,27 @@
           <div
             class="project-filters"
             role="group"
-            aria-label="Filtrar projetos por agenda"
+            aria-label="Filtrar projetos por área de atuação"
           >
             <button type="button" data-filter="social" aria-pressed="false">
-              Pessoas</button
+              Social & Cidadania</button
             ><button type="button" data-filter="growth" aria-pressed="false">
-              Crescimento</button
+              Desenvolvimento Urbano</button
             ><button
               type="button"
               data-filter="governance"
               aria-pressed="false"
             >
-              Gestão</button
+              Gestão & Finanças</button
             ><button type="button" data-filter="all" aria-pressed="true">
-              Todos
+              Todos os projetos
             </button>
           </div>
-          <p id="projectFilterStatus" aria-live="polite">Portfólio completo</p>
-          <small>Escolha uma agenda. Deslize para explorar.</small>
+          <p id="projectFilterStatus" aria-live="polite">Todos os projetos prioritários da capital</p>
+          <div class="ux-helper-tip" style="margin-top:6px;">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">Selecione uma área acima para explorar as entregas prioritárias da capital.</span>
+          </div>
         </div>
         <div class="risk-grid">
           <article class="risk-card seme-card">
@@ -1278,14 +1291,14 @@
           set/2026.
         </div>
       
-        <!-- Card de Aprofundamento para a Página 6 -->
+        <!-- Card de Próximo Passo para a Seção 6 -->
         <div class="section-deep-dive-card">
           <div class="deep-dive-content">
-            <span>Aprofundamento · Página 6</span>
-            <h4>Dados de evasão da carreira</h4>
-            <p>Veja os dados auditados de perda de servidores estratégicos para outros órgãos e governos decorrente da defasagem salarial.</p>
+            <span>Etapa 6 de 8 · Próximo tema</span>
+            <h4>Para onde vão os talentos da Prefeitura?</h4>
+            <p>Veja os dados auditados de evasão e entenda como a defasagem salarial afeta a retenção de servidores estratégicos.</p>
           </div>
-          <a href="#dados-evasao" class="btn-deep-dive">Avançar para: Dados de evasão →</a>
+          <a href="#dados-evasao" class="btn-deep-dive">Ver dados de evasão →</a>
         </div>
 </section>
       
@@ -1295,18 +1308,17 @@
         <section class="retention-summary" aria-labelledby="retention-title">
         <div class="retention-top">
           <div>
-            <p class="eyebrow">Para onde foram os 43 APPGGs exonerados</p>
+            <p class="eyebrow">Trajetória e mobilidade dos 43 APPGGs exonerados</p>
             <h2 id="retention-title">
-              Uma carreira <span class="underline-word">quase 25% maior.</span>
+              Uma carreira com potencial <span class="underline-word">quase 25% maior.</span>
             </h2>
             <p>
-              Sem as saídas: 218 pessoas.
-              <strong>1 em cada 5 integrantes potenciais</strong> já tomou um
-              novo rumo profissional.
+              Sem as saídas pela defasagem salarial: 218 servidores.
+              <strong>1 em cada 5 integrantes potenciais</strong> já tomou um novo rumo profissional.
             </p>
           </div>
           <aside>
-            <strong>43</strong><span>saídas da carreira</span
+            <strong>43</strong><span>saídas registradas</span
             ><small>175 ativos + 43 exonerados</small>
           </aside>
         </div>
@@ -1401,7 +1413,7 @@
           <div
             class="mobility-filters"
             role="group"
-            aria-label="Filtrar pessoas por situação"
+            aria-label="Filtrar servidores por situação funcional"
           >
             <button
               type="button"
@@ -1414,32 +1426,36 @@
               data-mobility-filter="LIP"
               aria-pressed="false"
             >
-              Em LIP</button
+              Em licença (LIP)</button
             ><button
               type="button"
               data-mobility-filter="Nomeado sem posse"
               aria-pressed="false"
             >
-              Não assumiram</button
+              Sem posse registrada</button
             ><button
               type="button"
               data-mobility-filter="Todos"
               aria-pressed="false"
             >
-              Todos
+              Todos os registros
             </button>
           </div>
           <label class="mobility-search"
-            ><span>Buscar primeiro nome</span
+            ><span>Buscar por primeiro nome</span
             ><input
               id="mobilitySearch"
               type="search"
               autocomplete="off"
-              placeholder="Ex.: Ana"
+              placeholder="Buscar por primeiro nome (ex.: Ana)..."
           /></label>
         </div>
+        <div class="ux-helper-tip" style="margin-top:6px;margin-bottom:12px;">
+          <span class="tip-icon">💡</span>
+          <span class="tip-text">Filtre por situação funcional ou busque por primeiro nome para conferir a trajetória profissional dos servidores.</span>
+        </div>
         <div class="mobility-result-head">
-          <strong id="mobilityTitle">Pessoas exoneradas</strong
+          <strong id="mobilityTitle">Servidores exonerados</strong
           ><span id="mobilityCount" aria-live="polite"></span>
         </div>
         <div class="mobility-grid" id="mobilityCards"></div>
@@ -1974,14 +1990,14 @@
           <div><button id="voicesPrev" type="button" aria-label="Apoio anterior">←</button><button id="voicesNext" type="button" aria-label="Próximo apoio">→</button></div>
         </div>
       </section>
-        <!-- Card de Aprofundamento para a Página 8 -->
+        <!-- Card de Próximo Passo para a Seção 8 -->
         <div class="section-deep-dive-card">
           <div class="deep-dive-content">
-            <span>Aprofundamento · Página 8</span>
-            <h4>Fundamento Jurídico</h4>
-            <p>Entenda a jurisprudência do Supremo Tribunal Federal (STF), a Súmula Vinculante 37 e a constitucionalidade da isonomia remuneratória.</p>
+            <span>Etapa 8 de 8 · Próximo tema</span>
+            <h4>Segurança e coerência jurídica</h4>
+            <p>A jurisprudência do STF sobre tratamento isonômico e equilíbrio funcional em carreiras de um mesmo quadro.</p>
           </div>
-          <a href="#fundamento-juridico" class="btn-deep-dive">Avançar para: Fundamento Jurídico →</a>
+          <a href="#fundamento-juridico" class="btn-deep-dive">Consultar fundamentação jurídica →</a>
         </div>
       </div>
 
@@ -2038,29 +2054,31 @@
         </div>
       </section>
       
-<section class="comments-section" id="comentarios">
+      <section class="comments-section" id="comentarios">
         <div class="comments-heading">
           <div>
-            <p class="eyebrow">Participação pública</p>
-            <h2>Deixe seu comentário.</h2>
+            <p class="eyebrow">Espaço aberto para diálogo</p>
+            <h2>Deixe sua contribuição ou relato.</h2>
           </div>
-          <p>Comentários são públicos. Não inclua dados pessoais.</p>
+          <p>Contribua com o debate público de forma construtiva e respeitosa. Os comentários são públicos.</p>
         </div>
         <div class="comments-layout">
           <form id="commentForm" class="comment-form">
             <label
-              >Nome<input
+              >Seu nome ou cargo (opcional)<input
                 id="commentAuthor"
                 name="author"
                 maxlength="60"
                 autocomplete="name"
+                placeholder="Ex.: Mariana (APPGG / Finanças) ou Cidadão"
                 required /></label
             ><label
-              >Comentário<textarea
+              >Sua mensagem<textarea
                 id="commentContent"
                 name="content"
                 maxlength="1000"
                 rows="5"
+                placeholder="Compartilhe seu relato sobre o trabalho da carreira ou sua visão sobre a importância da valorização..."
                 required
               ></textarea
               ><span><output id="commentCount">0</output>/1.000</span></label

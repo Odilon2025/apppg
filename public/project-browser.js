@@ -10,7 +10,13 @@
     growth: ['SMDET', 'SMT ', 'SIURB', 'SF ', 'SECLIMA', 'SEDP', 'SVMA'],
     governance: ['SEGES', 'SEDP', 'CGM', 'SMSUB', 'PGM']
   };
-  const labels = {highlights:'Projetos prioritários', social:'Políticas para pessoas', growth:'Agenda de crescimento', governance:'Capacidade de gestão', all:'Portfólio completo'};
+  const labels = {
+    highlights: 'Projetos prioritários',
+    social: 'Social & Cidadania (educação, saúde, esporte e assistência)',
+    growth: 'Desenvolvimento Urbano (mobilidade, obras, habitação e clima)',
+    governance: 'Gestão & Finanças (orçamento, compras, modernização e controle)',
+    all: 'Todos os projetos prioritários da capital'
+  };
   const cards = [...grid.querySelectorAll('.risk-card')];
   const divider = grid.querySelector('.risk-grid-break');
 
