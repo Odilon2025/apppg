@@ -52,12 +52,13 @@
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setActiveButton(entry.target.id);
+          const navTarget = entry.target.id === 'evolucao' ? 'comparacao-salarial' : entry.target.id;
+          setActiveButton(navTarget);
         }
       });
     }, observerOptions);
 
-    sectionIds.forEach(id => {
+    [...sectionIds, 'evolucao'].forEach(id => {
       const el = document.getElementById(id);
       if (el) {
         sectionObserver.observe(el);
