@@ -48,44 +48,47 @@
       @import url("/retention-summary.css");
       @import url("/apogesp-brand.css");
     </style>
-    <header>
-      <a
-        class="brand apogesp-brand"
-        href="#inicio"
-        aria-label="APOGESP — voltar ao início"
-        ><img src="/apogesp-mark.png" alt="APOGESP" /><span
-          class="campaign-label"
-          ><b>Razões para modificar o PL</b
-          ><small>699/2026 · inclusão dos APPGGs</small></span
-        ></a
-      >
-      <div class="header-actions">
-        <button
-          id="exportPdf"
-          type="button"
-          aria-label="Baixar relatório completo em PDF"
-          title="Baixar relatório completo em PDF"
+    <!-- Topo Fixo com Cabeçalho Institucional, 8 Botões de Navegação Rápida e Barra de Progresso -->
+    <div class="sticky-nav-header-wrapper" id="stickyTopBar">
+      <header>
+        <a
+          class="brand apogesp-brand"
+          href="#inicio"
+          aria-label="APOGESP — voltar ao início"
+          ><img src="/apogesp-mark.png" alt="APOGESP" /><span
+            class="campaign-label"
+            ><b>Razões para modificar o PL</b
+            ><small>699/2026 · inclusão dos APPGGs</small></span
+          ></a
         >
-          <span>Baixar PDF</span>
-        </button>
-        <button id="shareTop" type="button" aria-label="Copiar link da página" title="Copiar link da página">Compartilhar</button>
-      </div>
-    </header>
+        <div class="header-actions">
+          <button
+            id="exportPdf"
+            type="button"
+            aria-label="Baixar relatório completo em PDF"
+            title="Baixar relatório completo em PDF"
+          >
+            <span>Baixar PDF</span>
+          </button>
+          <button id="shareTop" type="button" aria-label="Copiar link da página" title="Copiar link da página">Compartilhar</button>
+        </div>
+      </header>
 
-    <!-- Barra de Navegação Rápida com as 8 Seções -->
-    <nav class="section-nav-strip" aria-label="Navegação rápida por seções da campanha">
-      <a href="#comparacao-salarial" class="nav-section-btn active"><span class="nav-num">1</span> Comparação salarial</a>
-      <a href="#por-que-equiparar" class="nav-section-btn"><span class="nav-num">2</span> Por que equiparar?</a>
-      <a href="#informacoes-enganosas" class="nav-section-btn"><span class="nav-num">3</span> Fatos e mitos</a>
-      <a href="#impacto-fiscal" class="nav-section-btn"><span class="nav-num">4</span> Impacto fiscal</a>
-      <a href="#entregas-appggs" class="nav-section-btn"><span class="nav-num">5</span> Projetos e entregas</a>
-      <a href="#dados-evasao" class="nav-section-btn"><span class="nav-num">6</span> Dados de evasão</a>
-      <a href="#quem-apoia" class="nav-section-btn"><span class="nav-num">7</span> Quem apoia</a>
-      <a href="#fundamento-juridico" class="nav-section-btn"><span class="nav-num">8</span> Base jurídica</a>
-    </nav>
-    <!-- Linha de Progresso Contínuo de Leitura (Previsibilidade e Foco Cognitivo) -->
-    <div class="reading-progress-track" aria-hidden="true" title="Progresso de leitura na página">
-      <div class="reading-progress-bar" id="readingProgressBar"></div>
+      <!-- Barra de Navegação Rápida com as 8 Seções Fixas no Topo -->
+      <nav class="section-nav-strip" aria-label="Navegação rápida por seções da campanha">
+        <a href="#comparacao-salarial" class="nav-section-btn active"><span class="nav-num">1</span> Comparação salarial</a>
+        <a href="#por-que-equiparar" class="nav-section-btn"><span class="nav-num">2</span> Por que equiparar?</a>
+        <a href="#informacoes-enganosas" class="nav-section-btn"><span class="nav-num">3</span> Fatos e mitos</a>
+        <a href="#impacto-fiscal" class="nav-section-btn"><span class="nav-num">4</span> Impacto fiscal</a>
+        <a href="#entregas-appggs" class="nav-section-btn"><span class="nav-num">5</span> Projetos e entregas</a>
+        <a href="#dados-evasao" class="nav-section-btn"><span class="nav-num">6</span> Dados de evasão</a>
+        <a href="#quem-apoia" class="nav-section-btn"><span class="nav-num">7</span> Quem apoia</a>
+        <a href="#fundamento-juridico" class="nav-section-btn"><span class="nav-num">8</span> Base jurídica</a>
+      </nav>
+      <!-- Linha de Progresso Contínuo de Leitura (Previsibilidade e Foco Cognitivo) -->
+      <div class="reading-progress-track" aria-hidden="true" title="Progresso de leitura na página">
+        <div class="reading-progress-bar" id="readingProgressBar"></div>
+      </div>
     </div>
 
     <main id="inicio">
@@ -144,7 +147,7 @@
                 <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Nível II · Ref. 11</span>
               </div>
               <div class="appgg-body">
-                <span>11ª Linha da Tabela (sem GEP)</span>
+                <span>11ª Linha da Tabela</span>
                 <strong>R$ 20.738</strong>
                 <small>Tempo de dedicação exigido para alcançar o valor sem gratificação de controle.</small>
               </div>

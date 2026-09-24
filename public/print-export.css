@@ -51,12 +51,13 @@
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;animation:none!important;transition:none!important}
   html,body{width:auto!important;min-width:0!important;background:#fff!important;color:#17212a;font-size:9.3pt}
   body{margin:0!important}
-  body>header{position:static!important;height:17mm!important;padding:0 0 4mm!important;border-bottom:1px solid #17324d!important;box-shadow:none!important;backdrop-filter:none!important;background:#fff!important}
-  body>header .apogesp-brand img{width:44px!important;height:38px!important}
-  body>header .campaign-label{display:flex!important;padding-left:9px!important}
-  body>header .campaign-label b{font-size:7.8pt!important}
-  body>header .campaign-label small{font-size:6.5pt!important}
-  .header-actions,.project-browser,.fact-carousel-nav,.comments-section{display:none!important}
+  .sticky-nav-header-wrapper{position:static!important;box-shadow:none!important}
+  .sticky-nav-header-wrapper header,body>header{position:static!important;height:17mm!important;padding:0 0 4mm!important;border-bottom:1px solid #17324d!important;box-shadow:none!important;backdrop-filter:none!important;background:#fff!important}
+  .sticky-nav-header-wrapper header .apogesp-brand img,body>header .apogesp-brand img{width:44px!important;height:38px!important}
+  .sticky-nav-header-wrapper header .campaign-label,body>header .campaign-label{display:flex!important;padding-left:9px!important}
+  .sticky-nav-header-wrapper header .campaign-label b,body>header .campaign-label b{font-size:7.8pt!important}
+  .sticky-nav-header-wrapper header .campaign-label small,body>header .campaign-label small{font-size:6.5pt!important}
+  .section-nav-strip,.reading-progress-track,.header-actions,.project-browser,.fact-carousel-nav,.comments-section{display:none!important}
   main{display:block!important;min-height:0!important}
   main>section{max-width:none!important}
   section[hidden]{display:none!important}

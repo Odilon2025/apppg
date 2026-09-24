@@ -1,11 +1,31 @@
+/* Container Unificado Fixo no Topo (Cabeçalho Institucional + 8 Botões de Seção + Barra de Progresso) */
+.sticky-nav-header-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(11, 38, 61, 0.08);
+}
+
+.sticky-nav-header-wrapper header {
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+  margin: 0;
+  border-bottom: 1px solid #dce2e7;
+}
+
 /* Navegação por Seções / Páginas da Campanha */
 .section-nav-strip {
-  position: sticky;
-  top: 59px;
-  z-index: 85;
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
   background: #ffffff;
-  border-bottom: 1px solid #dce2e7;
-  box-shadow: 0 2px 10px rgba(15, 41, 66, 0.05);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: none;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -343,13 +363,13 @@
 
 /* Barra de Progresso de Leitura (Previsibilidade e Foco para TDAH & TOC) */
 .reading-progress-track {
-  position: sticky;
-  top: 99px;
+  position: static;
+  top: auto;
   left: 0;
   width: 100%;
   height: 4px;
   background: #e2e8f0;
-  z-index: 86;
+  z-index: auto;
   overflow: hidden;
 }
 
@@ -460,9 +480,6 @@ abbr[title] {
   }
   .case-grid article {
     min-height: auto !important;
-  }
-  .reading-progress-track {
-    top: 98px;
   }
   .career-values-contiguous {
     grid-template-columns: 1fr;
