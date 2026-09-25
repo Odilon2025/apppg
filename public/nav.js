@@ -1,4 +1,4 @@
-// Controle de Navegação e Seção Ativa (Páginas 1 a 8)
+// Controle de Navegação e Seção Ativa (Páginas 1 a 8) - Quiet Luxury & Fluid Mobile
 (function initSectionNavigation() {
   const navButtons = document.querySelectorAll('.nav-section-btn');
   const navContainer = document.querySelector('.section-nav-strip');
@@ -16,7 +16,7 @@
   let isNavigating = false;
   let navTimeout = null;
 
-  // Centraliza o botão ativo apenas dentro da barra horizontal sem interferir na rolagem da janela
+  // Centraliza o botão ativo dentro da barra horizontal sem interferir na rolagem vertical da página
   function centerNavButton(btn) {
     if (!navContainer || !btn) return;
     const btnRect = btn.getBoundingClientRect();
@@ -57,37 +57,35 @@
     isNavigating = true;
     if (navTimeout) clearTimeout(navTimeout);
 
-    // Marca imediatamente o botão como ativo
+    // Marca imediatamente o botão correspondente como ativo
     setActiveButton(targetId);
-
-    // Mede a altura dinâmica do cabeçalho fixo unificado no topo
-    const stickyWrapper = document.querySelector('.sticky-nav-header-wrapper') || document.querySelector('header');
-    const headerOffset = stickyWrapper ? stickyWrapper.offsetHeight + 10 : 120;
-
-    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
-    const targetY = Math.max(0, elementPosition - headerOffset);
 
     const preferReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    window.scrollTo({
-      top: targetY,
-      behavior: preferReduced ? 'auto' : 'smooth'
+    // Rolagem nativa suave respeitando scroll-margin-top configurado no CSS
+    targetEl.scrollIntoView({
+      behavior: preferReduced ? 'auto' : 'smooth',
+      block: 'start'
     });
 
-    // Permite que o scroll finalize antes de reabilitar o observer
+    // Mantém isNavigating ativo durante a transição suave para evitar oscilações no IntersectionObserver
     navTimeout = setTimeout(() => {
       isNavigating = false;
-    }, 850);
+    }, 950);
   }
 
-  // Intercepta cliques nos botões de navegação
+  // Intercepta cliques nos botões de navegação no topo fixo
   navButtons.forEach(btn => {
     btn.addEventListener('click', e => {
       const href = btn.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
+        e.stopPropagation();
         const targetId = href.replace('#', '');
         scrollToSection(targetId);
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#' + targetId);
+        }
       }
     });
   });
@@ -100,7 +98,11 @@
         const targetId = href.replace('#', '');
         if (sectionIds.includes(targetId)) {
           e.preventDefault();
+          e.stopPropagation();
           scrollToSection(targetId);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, '', '#' + targetId);
+          }
         }
       }
     });
@@ -111,23 +113,27 @@
   if (brandLink) {
     brandLink.addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       isNavigating = true;
       if (navTimeout) clearTimeout(navTimeout);
       const preferReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({ top: 0, behavior: preferReduced ? 'auto' : 'smooth' });
       setActiveButton(sectionIds[0]);
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, '', '#inicio');
+      }
       navTimeout = setTimeout(() => {
         isNavigating = false;
-      }, 850);
+      }, 900);
     });
   }
 
-  // Observer para destacar seção durante a rolagem livre
+  // Observer para destacar seção durante a rolagem livre do leitor
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '-15% 0px -55% 0px',
-      threshold: [0, 0.1, 0.25]
+      rootMargin: '-20% 0px -45% 0px',
+      threshold: [0, 0.15]
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -150,29 +156,42 @@
   }
 
   // Listener para extremos (topo e rodapé da página)
+  let scrollThrottle = false;
   window.addEventListener('scroll', () => {
-    if (isNavigating) return;
+    if (isNavigating || scrollThrottle) return;
 
-    if (window.scrollY < 100) {
-      setActiveButton(sectionIds[0]);
-      return;
-    }
+    scrollThrottle = true;
+    window.requestAnimationFrame(() => {
+      scrollThrottle = false;
+      if (isNavigating) return;
 
-    const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
-    if (atBottom) {
-      setActiveButton(sectionIds[sectionIds.length - 1]);
-    }
+      if (window.scrollY < 80) {
+        setActiveButton(sectionIds[0]);
+        return;
+      }
+
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 70);
+      if (atBottom) {
+        setActiveButton(sectionIds[sectionIds.length - 1]);
+      }
+    });
   }, { passive: true });
 
-  // Barra de Progresso de Leitura Contínua (TDAH & TOC)
+  // Barra de Progresso de Leitura Contínua via GPU (scaleX) - Máxima Fluidez no Smartphone
   const progressBar = document.getElementById('readingProgressBar');
   if (progressBar) {
+    let progressTicking = false;
     function updateProgress() {
-      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollableHeight > 0) {
-        const pct = Math.min(100, Math.max(0, (window.scrollY / scrollableHeight) * 100));
-        progressBar.style.width = pct + '%';
-      }
+      if (progressTicking) return;
+      progressTicking = true;
+      window.requestAnimationFrame(() => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight > 0) {
+          const ratio = Math.min(1, Math.max(0, window.scrollY / scrollableHeight));
+          progressBar.style.transform = 'scaleX(' + ratio + ')';
+        }
+        progressTicking = false;
+      });
     }
     window.addEventListener('scroll', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress, { passive: true });

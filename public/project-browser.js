@@ -11,11 +11,11 @@
     governance: ['SEGES', 'SEDP', 'CGM', 'SMSUB', 'PGM']
   };
   const labels = {
-    highlights: 'Projetos prioritários',
-    social: 'Social & Cidadania (educação, saúde, esporte e assistência)',
-    growth: 'Desenvolvimento Urbano (mobilidade, obras, habitação e clima)',
-    governance: 'Gestão & Finanças (orçamento, compras, modernização e controle)',
-    all: 'Todos os projetos prioritários da capital'
+    highlights: 'Iniciativas de Alto Impacto Sistêmico',
+    social: 'Políticas Sociais & Cidadania (educação, saúde pública, assistência social e esporte)',
+    growth: 'Infraestrutura Urbana & Sustentabilidade (mobilidade, drenagem, habitação e clima)',
+    governance: 'Gestão Estratégica & Finanças (planejamento, compras públicas, inovação e controle)',
+    all: 'Todas as entregas públicas prioritárias para a Cidade de São Paulo'
   };
   const cards = [...grid.querySelectorAll('.risk-card')];
   const divider = grid.querySelector('.risk-grid-break');

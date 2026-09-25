@@ -158,8 +158,8 @@
     lineDay1.setAttribute('x2', width - padding.right + 15);
     lineDay1.setAttribute('y1', yDay1);
     lineDay1.setAttribute('y2', yDay1);
-    lineDay1.setAttribute('stroke', '#d97706');
-    lineDay1.setAttribute('stroke-width', '2');
+    lineDay1.setAttribute('stroke', '#b38a4a');
+    lineDay1.setAttribute('stroke-width', '1.8');
     lineDay1.setAttribute('stroke-dasharray', '5 4');
     svg.appendChild(lineDay1);
 
@@ -168,7 +168,7 @@
     textDay1.setAttribute('y', yDay1 - 3);
     textDay1.setAttribute('font-size', '10');
     textDay1.setAttribute('font-weight', 'bold');
-    textDay1.setAttribute('fill', '#b45309');
+    textDay1.setAttribute('fill', '#8c6d48');
     textDay1.textContent = 'AMCI 1º dia (básico)';
     svg.appendChild(textDay1);
 
@@ -177,7 +177,7 @@
     valDay1.setAttribute('y', yDay1 + 10);
     valDay1.setAttribute('font-size', '10');
     valDay1.setAttribute('font-weight', 'bold');
-    valDay1.setAttribute('fill', '#b45309');
+    valDay1.setAttribute('fill', '#8c6d48');
     valDay1.textContent = 'R$ 21.527,50';
     svg.appendChild(valDay1);
 
@@ -188,8 +188,8 @@
     lineGepDay1.setAttribute('x2', width - padding.right + 15);
     lineGepDay1.setAttribute('y1', yGepDay1);
     lineGepDay1.setAttribute('y2', yGepDay1);
-    lineGepDay1.setAttribute('stroke', '#0284c7');
-    lineGepDay1.setAttribute('stroke-width', '2');
+    lineGepDay1.setAttribute('stroke', '#42617f');
+    lineGepDay1.setAttribute('stroke-width', '1.8');
     lineGepDay1.setAttribute('stroke-dasharray', '5 4');
     svg.appendChild(lineGepDay1);
 
@@ -198,7 +198,7 @@
     textGepDay1.setAttribute('y', yGepDay1 - 3);
     textGepDay1.setAttribute('font-size', '10');
     textGepDay1.setAttribute('font-weight', 'bold');
-    textGepDay1.setAttribute('fill', '#0369a1');
+    textGepDay1.setAttribute('fill', '#324e68');
     textGepDay1.textContent = 'AMCI + GEP 1º dia';
     svg.appendChild(textGepDay1);
 
@@ -207,7 +207,7 @@
     valGepDay1.setAttribute('y', yGepDay1 + 10);
     valGepDay1.setAttribute('font-size', '10');
     valGepDay1.setAttribute('font-weight', 'bold');
-    valGepDay1.setAttribute('fill', '#0369a1');
+    valGepDay1.setAttribute('fill', '#324e68');
     valGepDay1.textContent = 'R$ 23.525,50';
     svg.appendChild(valGepDay1);
 
@@ -220,32 +220,32 @@
       }).join(' ');
     }
 
-    // Curve 1: APPGG
+    // Curve 1: APPGG (Deep Tailored Navy)
     const pathAppgg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     pathAppgg.setAttribute('d', makePath(APPGG_DATA));
     pathAppgg.setAttribute('fill', 'none');
-    pathAppgg.setAttribute('stroke', '#f97316');
-    pathAppgg.setAttribute('stroke-width', '3.5');
+    pathAppgg.setAttribute('stroke', '#122338');
+    pathAppgg.setAttribute('stroke-width', '3.2');
     pathAppgg.setAttribute('stroke-linejoin', 'round');
     pathAppgg.setAttribute('stroke-linecap', 'round');
     svg.appendChild(pathAppgg);
 
-    // Curve 2: AMCI (PL novo)
+    // Curve 2: AMCI (Curatorial Wine)
     const pathAmci = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     pathAmci.setAttribute('d', makePath(AMCI_DATA));
     pathAmci.setAttribute('fill', 'none');
-    pathAmci.setAttribute('stroke', '#dc2626');
-    pathAmci.setAttribute('stroke-width', '3.5');
+    pathAmci.setAttribute('stroke', '#8f2428');
+    pathAmci.setAttribute('stroke-width', '3.2');
     pathAmci.setAttribute('stroke-linejoin', 'round');
     pathAmci.setAttribute('stroke-linecap', 'round');
     svg.appendChild(pathAmci);
 
-    // Curve 3: AMCI + GEP
+    // Curve 3: AMCI + GEP (Warm Bronze)
     const pathAmciGep = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     pathAmciGep.setAttribute('d', makePath(AMCI_GEP_DATA));
     pathAmciGep.setAttribute('fill', 'none');
-    pathAmciGep.setAttribute('stroke', '#7c3aed');
-    pathAmciGep.setAttribute('stroke-width', '3.5');
+    pathAmciGep.setAttribute('stroke', '#995d2c');
+    pathAmciGep.setAttribute('stroke-width', '3.2');
     pathAmciGep.setAttribute('stroke-linejoin', 'round');
     pathAmciGep.setAttribute('stroke-linecap', 'round');
     svg.appendChild(pathAmciGep);
@@ -289,11 +289,11 @@
 
           tooltip.innerHTML = `
             <b>Referência ${i + 1} (${i < 6 ? 'Nível I' : i < 11 ? 'Nível II' : 'Nível III'})</b>
-            <div>APPGG: <strong>${fmtBrl(appVal)}</strong></div>
-            <div>AMCI: <strong>${fmtBrl(amciVal)}</strong></div>
-            <div>AMCI + GEP: <strong>${fmtBrl(gepVal)}</strong></div>
+            <div>APPGG (Atual): <strong>${fmtBrl(appVal)}</strong></div>
+            <div>AMCI (PL 699/2026): <strong>${fmtBrl(amciVal)}</strong></div>
+            <div>AMCI + GEP (Controle): <strong>${fmtBrl(gepVal)}</strong></div>
             <div style="margin-top:4px;border-top:1px dashed rgba(255,255,255,0.3);padding-top:4px;color:#fca5a5;">
-              Diferença: +${diffPct}% (+${fmtBrl(diffVal)})
+              Defasagem: +${diffPct}% (+${fmtBrl(diffVal)}/mês)
             </div>
           `;
           tooltip.style.display = 'block';
@@ -309,18 +309,18 @@
       });
     }
 
-    drawPoints(APPGG_DATA, '#f97316', 'APPGG');
-    drawPoints(AMCI_DATA, '#dc2626', 'AMCI');
-    drawPoints(AMCI_GEP_DATA, '#7c3aed', 'AMCI + GEP');
+    drawPoints(APPGG_DATA, '#122338', 'APPGG');
+    drawPoints(AMCI_DATA, '#8f2428', 'AMCI');
+    drawPoints(AMCI_GEP_DATA, '#995d2c', 'AMCI + GEP');
 
-    // Add Highlight Badges directly on the SVG:
+    // Add Highlight Badges directly on the SVG - Quiet Luxury
     // Badge 1: Nível 12 (Cruzamento AMCI 1º Dia)
     const x12 = getX(11); // index 11 is ref 12
     const y12 = getY(APPGG_DATA[11]);
     const badge12 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge12.innerHTML = `
-      <rect x="${x12 - 95}" y="${y12 + 12}" width="190" height="38" rx="4" fill="#166534" filter="url(#shadow)"/>
-      <text x="${x12}" y="${y12 + 27}" text-anchor="middle" font-size="10" font-weight="bold" fill="#86efac">✓ Nível 12 — cruza AMCI 1º dia</text>
+      <rect x="${x12 - 100}" y="${y12 + 12}" width="200" height="38" rx="4" fill="#1c3e34" filter="url(#shadow)"/>
+      <text x="${x12}" y="${y12 + 27}" text-anchor="middle" font-size="10" font-weight="bold" fill="#bbf7d0">✓ Nível 12 · Alcança o piso AMCI</text>
       <text x="${x12}" y="${y12 + 42}" text-anchor="middle" font-size="9" fill="#ffffff">R$ 22.875,96 > R$ 21.527,50</text>
     `;
     svg.appendChild(badge12);
@@ -330,8 +330,8 @@
     const y14 = getY(APPGG_DATA[13]);
     const badge14 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge14.innerHTML = `
-      <rect x="${x14 - 105}" y="${y14 - 45}" width="210" height="38" rx="4" fill="#0369a1" filter="url(#shadow)"/>
-      <text x="${x14}" y="${y14 - 30}" text-anchor="middle" font-size="10" font-weight="bold" fill="#bae6fd">✓ Nível 14 — cruza AMCI + GEP</text>
+      <rect x="${x14 - 105}" y="${y14 - 45}" width="210" height="38" rx="4" fill="#1b354f" filter="url(#shadow)"/>
+      <text x="${x14}" y="${y14 - 30}" text-anchor="middle" font-size="10" font-weight="bold" fill="#bae6fd">✓ Nível 14 · Alcança o piso com GEP</text>
       <text x="${x14}" y="${y14 - 15}" text-anchor="middle" font-size="9" fill="#ffffff">R$ 24.034,05 > R$ 23.525,50</text>
     `;
     svg.appendChild(badge14);
@@ -341,9 +341,9 @@
     const y11 = getY(AMCI_DATA[10]);
     const badge11 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge11.innerHTML = `
-      <rect x="${x11 - 85}" y="${y11 - 44}" width="170" height="38" rx="4" fill="#991b1b" filter="url(#shadow)"/>
-      <text x="${x11}" y="${y11 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fecaca">Nível 11 — maior diferença</text>
-      <text x="${x11}" y="${y11 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI +71,9% (R$ 35.645,57)</text>
+      <rect x="${x11 - 95}" y="${y11 - 44}" width="190" height="38" rx="4" fill="#781d22" filter="url(#shadow)"/>
+      <text x="${x11}" y="${y11 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fecaca">Nível 11 · Pico de assimetria (+71,9%)</text>
+      <text x="${x11}" y="${y11 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI: R$ 35.645,57 (+R$ 14,9k/mês)</text>
     `;
     svg.appendChild(badge11);
 
@@ -352,9 +352,9 @@
     const y15 = getY(AMCI_DATA[14]);
     const badge15 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge15.innerHTML = `
-      <rect x="${x15 - 85}" y="${y15 - 44}" width="170" height="38" rx="4" fill="#7c2d12" filter="url(#shadow)"/>
-      <text x="${x15}" y="${y15 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fed7aa">Nível 15 — teto</text>
-      <text x="${x15}" y="${y15 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI +57,3% (em 2015: +0,2%)</text>
+      <rect x="${x15 - 95}" y="${y15 - 44}" width="190" height="38" rx="4" fill="#5c181c" filter="url(#shadow)"/>
+      <text x="${x15}" y="${y15 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fed7aa">Nível 15 · Quebra de isonomia (+57,3%)</text>
+      <text x="${x15}" y="${y15 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI: R$ 38.751,90 (+R$ 14,1k/mês)</text>
     `;
     svg.appendChild(badge15);
 

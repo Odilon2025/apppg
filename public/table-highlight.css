@@ -53,8 +53,8 @@
   text-align: right !important;
   font-family: var(--font-title, Newsreader), Georgia, serif !important;
   font-size: 1.18rem !important;
-  font-weight: 800 !important;
-  color: #b91c1c !important;
+  font-weight: 700 !important;
+  color: #7f1d1d !important;
 }
 
 .front-table > div:not(:first-child) > :nth-child(5) {
@@ -119,6 +119,6 @@
 
 .front-table-mobile > div > b:nth-child(4) {
   text-align: right !important;
-  color: #b91c1c !important;
+  color: #7f1d1d !important;
   font-weight: 700;
 }

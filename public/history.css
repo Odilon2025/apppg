@@ -134,13 +134,13 @@
 }
 
 .photo-piso-num {
-  color: #b91c1c;
+  color: #7f1d1d;
   font-size: 1.08rem;
   font-weight: 800;
 }
 
 .photo-teto-num {
-  color: #1b6e1e;
+  color: #1c4438;
   font-size: 1.08rem;
   font-weight: 800;
 }
@@ -163,12 +163,12 @@
 }
 
 .photo-red-val {
-  color: #b91c1c !important;
+  color: #7f1d1d !important;
   font-weight: 800 !important;
 }
 
 .photo-green-val {
-  color: #1b6e1e !important;
+  color: #1c4438 !important;
   font-weight: 800 !important;
 }
 
