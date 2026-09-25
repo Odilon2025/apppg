@@ -291,9 +291,9 @@
             <b>Referência ${i + 1} (${i < 6 ? 'Nível I' : i < 11 ? 'Nível II' : 'Nível III'})</b>
             <div>APPGG (Atual): <strong>${fmtBrl(appVal)}</strong></div>
             <div>AMCI (PL 699/2026): <strong>${fmtBrl(amciVal)}</strong></div>
-            <div>AMCI + GEP (Controle): <strong>${fmtBrl(gepVal)}</strong></div>
+            <div>AMCI + GEP: <strong>${fmtBrl(gepVal)}</strong></div>
             <div style="margin-top:4px;border-top:1px dashed rgba(255,255,255,0.3);padding-top:4px;color:#fca5a5;">
-              Defasagem: +${diffPct}% (+${fmtBrl(diffVal)}/mês)
+              Diferença: +${diffPct}% (+${fmtBrl(diffVal)}/mês)
             </div>
           `;
           tooltip.style.display = 'block';
@@ -313,7 +313,7 @@
     drawPoints(AMCI_DATA, '#8f2428', 'AMCI');
     drawPoints(AMCI_GEP_DATA, '#995d2c', 'AMCI + GEP');
 
-    // Add Highlight Badges directly on the SVG - Quiet Luxury
+    // Add Highlight Badges directly on the SVG
     // Badge 1: Nível 12 (Cruzamento AMCI 1º Dia)
     const x12 = getX(11); // index 11 is ref 12
     const y12 = getY(APPGG_DATA[11]);
@@ -342,7 +342,7 @@
     const badge11 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge11.innerHTML = `
       <rect x="${x11 - 95}" y="${y11 - 44}" width="190" height="38" rx="4" fill="#781d22" filter="url(#shadow)"/>
-      <text x="${x11}" y="${y11 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fecaca">Nível 11 · Pico de assimetria (+71,9%)</text>
+      <text x="${x11}" y="${y11 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fecaca">Nível 11 · Maior diferença (+71,9%)</text>
       <text x="${x11}" y="${y11 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI: R$ 35.645,57 (+R$ 14,9k/mês)</text>
     `;
     svg.appendChild(badge11);
@@ -353,7 +353,7 @@
     const badge15 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     badge15.innerHTML = `
       <rect x="${x15 - 95}" y="${y15 - 44}" width="190" height="38" rx="4" fill="#5c181c" filter="url(#shadow)"/>
-      <text x="${x15}" y="${y15 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fed7aa">Nível 15 · Quebra de isonomia (+57,3%)</text>
+      <text x="${x15}" y="${y15 - 29}" text-anchor="middle" font-size="10" font-weight="bold" fill="#fed7aa">Nível 15 · Topo da carreira (+57,3%)</text>
       <text x="${x15}" y="${y15 - 14}" text-anchor="middle" font-size="9" fill="#ffffff">AMCI: R$ 38.751,90 (+R$ 14,1k/mês)</text>
     `;
     svg.appendChild(badge15);

@@ -10,8 +10,8 @@
   nav.innerHTML = `
     <span aria-live="polite">1 de ${cards.length}</span>
     <div class="fact-carousel-buttons">
-      <button type="button" data-direction="-1" aria-label="Auditoria anterior">←</button>
-      <button type="button" data-direction="1" aria-label="Próxima auditoria">→</button>
+      <button type="button" data-direction="-1" aria-label="Fato anterior">←</button>
+      <button type="button" data-direction="1" aria-label="Próximo fato">→</button>
     </div>`;
   track.insertAdjacentElement('afterend', nav);
 

@@ -52,7 +52,7 @@ function renderFront(){
 
 renderFront();
 $('shareTop').addEventListener('click',async()=>{
-  const data={title:document.title,text:'Parecer Técnico APOGESP: Análise comparada do PL 699/2026, isonomia remuneratória e viabilidade fiscal para a Cidade de São Paulo.',url:location.href};
+  const data={title:document.title,text:'APPGG × AMCI: comparação salarial direta e impacto orçamentário.',url:location.href};
   if(navigator.share){
     try { await navigator.share(data); } catch(_) {}
   } else {
